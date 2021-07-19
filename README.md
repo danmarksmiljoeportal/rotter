@@ -51,6 +51,10 @@ Declare configuration element included in web.config: system.identityModel, syst
 Contains the information of RotteWS configuration and Identify configuration
 ![image.png](/assets/images/03.png)
 
+- RotteWS/ServiceUrl is RotteWS url
+\+ Prod: https://services-rottereden.miljoeportal.dk/Service.svc
+\+ Demo: https://services-rottereden.demo.miljoeportal.dk/Service.svc
+
 - RotteWS/EncryptionCertificate is based64 content of `/certificates/Encryption/services.rottereden.miljoeportal.dk.cer` file 
 
 - Identify/EncryptionCertificate is based64 content of `/certificates/Identify/log-in.miljoeportal.dk.cer` file
@@ -69,10 +73,12 @@ Just follow exact code as below
 
 #### 1.6. Contact RotteWS from C# code 
 `Rotte.WsTrust` library project is located `\src\Exmample\Rotte.WsTrust` consists of WsFed authentication and Rotte service contracts code, download it and add to your project as libarary
+`Rotte.WsTrust` already add RotteWS service reference by Visual Studio
 ![image.png](/assets/images/09.png)
 
-In above code, `Page_Load` event method shows how get RotteWS service instance from ActAs security token in the web app 
 
+In below code, `Page_Load` event method shows how get RotteWS service instance from ActAs security token in the web app 
+![image.png](/assets/images/10.png)
 
 ## 2. How to integrate with a desktop app
 

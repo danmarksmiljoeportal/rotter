@@ -65,6 +65,7 @@ namespace Rotte.WsTrust
                 CloseChannel(channel);
             }
         }
+
         public static WS2007FederationHttpBinding GetServiceBinding(WS2007HttpBinding stsBinding,
             bool negotiateServiceCertificate)
         {
@@ -88,6 +89,7 @@ namespace Rotte.WsTrust
 
             return serviceBinding;
         }
+
         public static void CloseChannel(object channel)
         {
             var communicationObject = (ICommunicationObject)channel;
@@ -105,7 +107,7 @@ namespace Rotte.WsTrust
 
         public static WS2007HttpBinding GetStsBinding()
         {
-            var stsBinding = new WS2007HttpBinding(SecurityMode.Message);
+            var stsBinding = new WS2007HttpBinding(SecurityMode.TransportWithMessageCredential);
             stsBinding.Security.Message.EstablishSecurityContext = false;
 
             return stsBinding;

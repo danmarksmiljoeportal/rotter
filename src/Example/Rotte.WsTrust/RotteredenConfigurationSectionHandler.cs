@@ -100,18 +100,22 @@ namespace Rotte.WsTrust
                 GetChildElementInnerText(adfs2Element, "EndpointIdentity", true));
             IdentifyEncryptionCertificate = GetChildElementInnerTextAsX509Certificate(adfs2Element, "EncryptionCertificate", true);
 
-            // Indlæs act as cert
-            var actAsElement = GetChildElementFromName(adfs2Element, "ActAsCertificate", true);
-            var storeLocation =
-                (StoreLocation)
-                Enum.Parse(typeof(StoreLocation), GetAttributeValueAsString(actAsElement, "storeLocation", true));
-            var storeName = (StoreName)
-                Enum.Parse(typeof(StoreName), GetAttributeValueAsString(actAsElement, "storeName", true));
-            var findType = (X509FindType)
-                Enum.Parse(typeof(X509FindType), GetAttributeValueAsString(actAsElement, "x509FindType", true));
-            var findValue = GetAttributeValueAsString(actAsElement, "findValue", true);
+            try
+            {
+                // Indlæs act as cert
+                var actAsElement = GetChildElementFromName(adfs2Element, "ActAsCertificate", true);
+                var storeLocation =
+                    (StoreLocation)
+                    Enum.Parse(typeof(StoreLocation), GetAttributeValueAsString(actAsElement, "storeLocation", true));
+                var storeName = (StoreName)
+                    Enum.Parse(typeof(StoreName), GetAttributeValueAsString(actAsElement, "storeName", true));
+                var findType = (X509FindType)
+                    Enum.Parse(typeof(X509FindType), GetAttributeValueAsString(actAsElement, "x509FindType", true));
+                var findValue = GetAttributeValueAsString(actAsElement, "findValue", true);
 
-            ActAsCertificate = CertUtil.GetCertificate(storeLocation, storeName, findType, findValue);
+                ActAsCertificate = CertUtil.GetCertificate(storeLocation, storeName, findType, findValue);
+            }
+            catch { }
         }
 
         #endregion

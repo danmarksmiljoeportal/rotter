@@ -26,7 +26,10 @@ namespace WsFed.Web
             RemoteRepeater.DataBind();
 
             var request = new SearchRotteanmeldelseRequest();
-            request.criteria.MaxRecords = 1;
+            request.criteria = new RotteanmeldelseSearch
+            {
+                MaxRecords = 1
+            };
             var response = rotteWS.SearchRotteanmeldelse(request);
         }
     }
