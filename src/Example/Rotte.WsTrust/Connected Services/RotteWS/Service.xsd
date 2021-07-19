@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" />
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" />
+  <xs:element name="GetRapportGiftForbrugUdviklingsIndsatsNettoYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q1:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportGiftForbrugUdviklingsIndsatsNettoYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportGiftForbrugUdviklingsIndsatsNettoYearsResult" nillable="true" type="q2:ServiceResult" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q3:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportGiftForbrugUdviklingsIndsats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="criteria" nillable="true" type="q4:RapportGiftForbrugUdviklingsIndsatsSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportGiftForbrugUdviklingsIndsatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRapportGiftForbrugUdviklingsIndsatsResult" nillable="true" type="q5:ServiceResult" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="records" nillable="true" type="q6:ArrayOfRapportGiftForbrugUdviklingsIndsats" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportRotteOmkosningerYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportRotteOmkosningerYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportRotteOmkosningerYearsResult" nillable="true" type="q8:ServiceResult" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportRotteOmkosninger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="criteria" nillable="true" type="q10:RapportRotteOmkosningerSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportRotteOmkosningerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRapportRotteOmkosningerResult" nillable="true" type="q11:ServiceResult" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="records" nillable="true" type="q12:ArrayOfRapportRotteOmkosninger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMinEjendomInAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q13:MinEjendomSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMinEjendomInAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchMinEjendomInAllResult" nillable="true" type="q14:ServiceResult" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendoms" nillable="true" type="q15:ArrayOfMinEjendom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContactInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetContactInfoResult" nillable="true" type="q16:ServiceResult" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="contactInfo" nillable="true" type="q17:ContactInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveContactInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="contactInfo" nillable="true" type="q18:UpdateContactInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveContactInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SaveContactInfoResult" nillable="true" type="q19:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="navn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetByResult" nillable="true" type="q20:ServiceResult" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="brugerView" nillable="true" type="q21:BrugerView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetCurrentUserResult" nillable="true" type="q22:ServiceResult" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="brugerView" nillable="true" type="q23:BrugerView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q24:NotificationSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchNotificationResult" nillable="true" type="q25:ServiceResult" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="notifications" nillable="true" type="q26:QueryResponseOfNotificationViewH3A2rP8r" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="rotteanmeldelseDocument" nillable="true" type="q27:RotteanmeldelseDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="PutDocumentResult" nillable="true" type="q28:ServiceResult" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="documentId" type="q29:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rotteanmeldelseId" type="q30:guid" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="documentId" type="q31:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetDocumentResult" nillable="true" type="q32:ServiceResult" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="contentResult" nillable="true" type="q33:ContentResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q34:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetDocumentInfoResult" nillable="true" type="q35:ServiceResult" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="document" nillable="true" type="q36:Document" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByRotteanmeldelseId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rotteanmeldelseId" type="q37:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsByRotteanmeldelseIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetDocumentsByRotteanmeldelseIdResult" nillable="true" type="q38:ServiceResult" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="documents" nillable="true" type="q39:ArrayOfDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateParentRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="model" nillable="true" type="q40:ParentRotteanmeldelseInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateParentRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="CreateParentRotteanmeldelseResult" nillable="true" type="q41:ServiceResult" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q42:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetBrugerAutorisationsnummer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="brugerId" type="q43:guid" />
+        <xs:element minOccurs="0" name="autorisationsnummer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetBrugerAutorisationsnummerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SetBrugerAutorisationsnummerResult" nillable="true" type="q44:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectParentRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q45:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejectParentRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="RejectParentRotteanmeldelseResult" nillable="true" type="q46:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptParentRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q47:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptParentRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="AcceptParentRotteanmeldelseResult" nillable="true" type="q48:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMunicipalityLocked">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q49:guid" />
+        <xs:element minOccurs="0" name="afslutningsYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMunicipalityLockedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="IsMunicipalityLockedResult" nillable="true" type="q50:ServiceResult" />
+        <xs:element minOccurs="0" name="municipalityIsLocked" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q51:RotteanmeldelsePageSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetPagedRotteanmeldelseResult" nillable="true" type="q52:ServiceResult" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="result" nillable="true" type="q53:RotteanmeldelsePageSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedMineEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q54:MinEjendomSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagedMineEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetPagedMineEjendomResult" nillable="true" type="q55:ServiceResult" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="result" nillable="true" type="q56:MineEjendomPageSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRotteanmeldelseItemView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="input" nillable="true" type="q57:RotteanmeldelseTypeAheadInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRotteanmeldelseItemViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRotteanmeldelseItemViewResult" nillable="true" type="q58:ServiceResult" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="result" nillable="true" type="q59:ArrayOfRotteanmeldelseTypeAheadItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSikringsordningerItemView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="input" nillable="true" type="q60:SikringsordningerTypeAheadInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSikringsordningerItemViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchSikringsordningerItemViewResult" nillable="true" type="q61:ServiceResult" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="result" nillable="true" type="q62:ArrayOfSikringsordningerTypeAheadItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSikringsordningerSearchItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q63:SikringsordningerItemsSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSikringsordningerSearchItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetSikringsordningerSearchItemsResult" nillable="true" type="q64:ServiceResult" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="result" nillable="true" type="q65:SikringsordningerSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEjendomValidity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="model" nillable="true" type="q66:EjendomValidityCheckingModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEjendomValidityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="CheckEjendomValidityResult" nillable="true" type="q67:ServiceResult" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="result" nillable="true" type="q68:DuplicateRotteanmeldlseView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUniqueBekaempere">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUniqueBekaempereResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchUniqueBekaempereResult" nillable="true" type="q69:ServiceResult" />
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="result" nillable="true" type="q70:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchApiCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q71:ApiCredentialSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchApiCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchApiCredentialsResult" nillable="true" type="q72:ServiceResult" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="apiCredentials" nillable="true" type="q73:ArrayOfApiCredential" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateApiCredential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="update" nillable="true" type="q74:ApiCredential" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateApiCredentialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateApiCredentialResult" nillable="true" type="q75:ServiceResult" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q76:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApiCredential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q77:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteApiCredentialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteApiCredentialResult" nillable="true" type="q78:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedNotificationsByIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="notificationIds" nillable="true" type="q79:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedNotificationsByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetReceivedNotificationsByIdsResult" nillable="true" type="q80:ServiceResult" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="pushNotifications" nillable="true" type="q81:ArrayOfPushNotification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreNewPushNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pushNotificationIds" nillable="true" type="q82:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreNewPushNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="StoreNewPushNotificationResult" nillable="true" type="q83:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActAsClaims">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActAsClaimsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetActAsClaimsResult" nillable="true" type="q84:ArrayOfClaim" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertCoordinate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" type="xs:double" />
+        <xs:element minOccurs="0" name="y" type="xs:double" />
+        <xs:element minOccurs="0" name="fromCoordinateSystemCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertCoordinateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConvertCoordinateResult" nillable="true" type="q85:ArrayOfdouble" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBruger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brugernavn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBrugerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadBrugerResult" nillable="true" type="q86:ServiceResult" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="brugers" nillable="true" type="q87:ArrayOfBruger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdminInfoModtager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brugernavn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdminInfoModtagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateAdminInfoModtagerResult" nillable="true" type="q88:ServiceResult" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bruger" nillable="true" type="q89:Bruger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMyndigheder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="myndigheds" nillable="true" type="q90:ArrayOfMyndighed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMyndighederResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateMyndighederResult" nillable="true" type="q91:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMyndigheder">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMyndighederResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadMyndighederResult" nillable="true" type="q92:ServiceResult" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="myndigheds" nillable="true" type="q93:ArrayOfMyndighed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDyr">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDyrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadDyrResult" nillable="true" type="q94:ServiceResult" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="dyrs" nillable="true" type="q95:ArrayOfDyr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDyr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="dyrs" nillable="true" type="q96:ArrayOfDyr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDyrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateDyrResult" nillable="true" type="q97:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePaabudstyper">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="paabudstypes" nillable="true" type="q98:ArrayOfPaabudstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePaabudstyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdatePaabudstyperResult" nillable="true" type="q99:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPaabudstyper">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPaabudstyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadPaabudstyperResult" nillable="true" type="q100:ServiceResult" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="paabudstypes" nillable="true" type="q101:ArrayOfPaabudstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIngenRoegProeveAarsager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ingenRoegProeveAarsags" nillable="true" type="q102:ArrayOfIngenRoegProeveAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIngenRoegProeveAarsagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateIngenRoegProeveAarsagerResult" nillable="true" type="q103:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIngenRoegProeveAarsager">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIngenRoegProeveAarsagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadIngenRoegProeveAarsagerResult" nillable="true" type="q104:ServiceResult" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ingenRoegProeveAarsags" nillable="true" type="q105:ArrayOfIngenRoegProeveAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIngenBekaempelseAarsager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ingenBekaempelseAarsags" nillable="true" type="q106:ArrayOfIngenBekaempelseAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIngenBekaempelseAarsagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateIngenBekaempelseAarsagerResult" nillable="true" type="q107:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIngenBekaempelseAarsager">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIngenBekaempelseAarsagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadIngenBekaempelseAarsagerResult" nillable="true" type="q108:ServiceResult" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ingenBekaempelseAarsags" nillable="true" type="q109:ArrayOfIngenBekaempelseAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsestyper">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsestypes" nillable="true" type="q110:ArrayOfBekaempelsestype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsestyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateBekaempelsestyperResult" nillable="true" type="q111:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBekaempelsestyper">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBekaempelsestyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadBekaempelsestyperResult" nillable="true" type="q112:ServiceResult" />
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsestypes" nillable="true" type="q113:ArrayOfBekaempelsestype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRotterObserveret">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="rotterObserverets" nillable="true" type="q114:ArrayOfRotterObserveret" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRotterObserveretResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateRotterObserveretResult" nillable="true" type="q115:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadRotterObserveret">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadRotterObserveretResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadRotterObserveretResult" nillable="true" type="q116:ServiceResult" />
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="rotterObserverets" nillable="true" type="q117:ArrayOfRotterObserveret" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTilsynsresultater">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="tilsynsresultats" nillable="true" type="q118:ArrayOfTilsynsresultat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTilsynsresultaterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateTilsynsresultaterResult" nillable="true" type="q119:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTilsynsresultater">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadTilsynsresultaterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadTilsynsresultaterResult" nillable="true" type="q120:ServiceResult" />
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="tilsynsresultats" nillable="true" type="q121:ArrayOfTilsynsresultat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAarsager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="aarsags" nillable="true" type="q122:ArrayOfAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAarsagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateAarsagerResult" nillable="true" type="q123:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAarsager">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAarsagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadAarsagerResult" nillable="true" type="q124:ServiceResult" />
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="aarsags" nillable="true" type="q125:ArrayOfAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGifttyper">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="gifttypes" nillable="true" type="q126:ArrayOfGifttype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGifttyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateGifttyperResult" nillable="true" type="q127:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGifttyper">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGifttyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadGifttyperResult" nillable="true" type="q128:ServiceResult" />
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="gifttypes" nillable="true" type="q129:ArrayOfGifttype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsesfirmaPaabudstyper">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsesfirmaPaabudstypes" nillable="true" type="q130:ArrayOfBekaempelsesfirmaPaabudstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsesfirmaPaabudstyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateBekaempelsesfirmaPaabudstyperResult" nillable="true" type="q131:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBekaempelsesfirmaPaabudstyper">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadBekaempelsesfirmaPaabudstyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadBekaempelsesfirmaPaabudstyperResult" nillable="true" type="q132:ServiceResult" />
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsesfirmaPaabudstypes" nillable="true" type="q133:ArrayOfBekaempelsesfirmaPaabudstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEjendomstyper">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendomstypes" nillable="true" type="q134:ArrayOfEjendomstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEjendomstyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateEjendomstyperResult" nillable="true" type="q135:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEjendomstyper">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadEjendomstyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadEjendomstyperResult" nillable="true" type="q136:ServiceResult" />
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendomstypes" nillable="true" type="q137:ArrayOfEjendomstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGift">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="gifts" nillable="true" type="q138:ArrayOfGift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGiftResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateGiftResult" nillable="true" type="q139:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGift">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadGiftResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadGiftResult" nillable="true" type="q140:ServiceResult" />
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="gifts" nillable="true" type="q141:ArrayOfGift" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsesfirma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsesfirma" nillable="true" type="q142:Bekaempelsesfirma" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsesfirmaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateBekaempelsesfirmaResult" nillable="true" type="q143:ServiceResult" />
+        <xs:element xmlns:q144="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q144:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBekaempelsesfirma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q145:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBekaempelsesfirmaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteBekaempelsesfirmaResult" nillable="true" type="q146:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBekaempelsesfirma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q147:BekaempelsesfirmaSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBekaempelsesfirmaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchBekaempelsesfirmaResult" nillable="true" type="q148:ServiceResult" />
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsesfirmaViews" nillable="true" type="q149:ArrayOfBekaempelsesfirmaView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBekaempelsesfirmaNavnOrCvr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q150:BekaempelsesfirmaSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBekaempelsesfirmaNavnOrCvrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchBekaempelsesfirmaNavnOrCvrResult" nillable="true" type="q151:ServiceResult" />
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsesfirmaViews" nillable="true" type="q152:ArrayOfBekaempelsesfirmaView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="rotteanmeldelse" nillable="true" type="q153:RotteanmeldelseUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateRotteanmeldelseResult" nillable="true" type="q154:ServiceResult" />
+        <xs:element xmlns:q155="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q155:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q156:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteRotteanmeldelseResult" nillable="true" type="q157:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q158:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="RestoreRotteanmeldelseResult" nillable="true" type="q159:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRotteanmeldelse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q160:RotteanmeldelseSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRotteanmeldelseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRotteanmeldelseResult" nillable="true" type="q161:ServiceResult" />
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="rotteanmeldelses" nillable="true" type="q162:ArrayOfRotteanmeldelseView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMetadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="forceRefresh" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMetadataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadMetadataResult" nillable="true" type="q163:ServiceResult" />
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="metadata" nillable="true" type="q164:AllMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q165:EjendomSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchEjendomResult" nillable="true" type="q166:ServiceResult" />
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendoms" nillable="true" type="q167:ArrayOfEjendom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIndberetning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="indberetning" nillable="true" type="q168:Indberetning" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIndberetningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateIndberetningResult" nillable="true" type="q169:ServiceResult" />
+        <xs:element xmlns:q170="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q170:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchIndberetning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q171:IndberetningSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchIndberetningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchIndberetningResult" nillable="true" type="q172:ServiceResult" />
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="indberetnings" nillable="true" type="q173:ArrayOfIndberetningView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndberetning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q174:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndberetningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteIndberetningResult" nillable="true" type="q175:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreIndberetning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q176:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreIndberetningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="RestoreIndberetningResult" nillable="true" type="q177:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusIndberettet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q178:guid" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusIndberettetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SetStatusIndberettetResult" nillable="true" type="q179:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusGodkendt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q180:guid" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusGodkendtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SetStatusGodkendtResult" nillable="true" type="q181:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusAfvist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q182:guid" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusAfvistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SetStatusAfvistResult" nillable="true" type="q183:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTilsyn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q184:TilsynSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTilsynResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchTilsynResult" nillable="true" type="q185:ServiceResult" />
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="tilsyns" nillable="true" type="q186:ArrayOfTilsynRoot" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTilsyn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="tilsyn" nillable="true" type="q187:TilsynRootUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTilsynResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateTilsynResult" nillable="true" type="q188:ServiceResult" />
+        <xs:element xmlns:q189="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q189:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTilsyn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q190:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTilsynResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteTilsynResult" nillable="true" type="q191:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsesfirmaPaabud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="contract" nillable="true" type="q192:BekaempelsesfirmaPaabud" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBekaempelsesfirmaPaabudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateBekaempelsesfirmaPaabudResult" nillable="true" type="q193:ServiceResult" />
+        <xs:element xmlns:q194="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q194:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBekaempelsesfirmaPaabud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q195:BekaempelsesfirmaPaabudSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBekaempelsesfirmaPaabudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchBekaempelsesfirmaPaabudResult" nillable="true" type="q196:ServiceResult" />
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bekaempelsesfirmaPaabuds" nillable="true" type="q197:ArrayOfBekaempelsesfirmaPaabudView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBekaempelsesfirmaPaabud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q198:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBekaempelsesfirmaPaabudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteBekaempelsesfirmaPaabudResult" nillable="true" type="q199:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="sikringsordning" nillable="true" type="q200:SikringsordningUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateSikringsordningResult" nillable="true" type="q201:ServiceResult" />
+        <xs:element xmlns:q202="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q202:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q203:SikringsordningSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchSikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchSikringsordningResult" nillable="true" type="q204:ServiceResult" />
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="sikringsordnings" nillable="true" type="q205:ArrayOfSikringsordningView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q206="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q206:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteSikringsordningResult" nillable="true" type="q207:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBFGift">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q208:BFGiftSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBFGiftResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchBFGiftResult" nillable="true" type="q209:ServiceResult" />
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bfgifts" nillable="true" type="q210:ArrayOfBFGiftView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBFGift">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="bfGift" nillable="true" type="q211:BFGiftUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBFGiftResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateBFGiftResult" nillable="true" type="q212:ServiceResult" />
+        <xs:element xmlns:q213="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q213:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBFGift">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q214:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBFGiftResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteBFGiftResult" nillable="true" type="q215:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIndbyggertal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aar" type="xs:int" />
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="indbyggertals" nillable="true" type="q216:ArrayOfIndbyggertalUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIndbyggertalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateIndbyggertalResult" nillable="true" type="q217:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndbyggertal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aar" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadIndbyggertalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadIndbyggertalResult" nillable="true" type="q218:ServiceResult" />
+        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="indbyggertals" nillable="true" type="q219:ArrayOfIndbyggertalView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndbyggertal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aar" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndbyggertalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q220="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteIndbyggertalResult" nillable="true" type="q220:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMySikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q221:MySikringsordningSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadMySikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadMySikringsordningResult" nillable="true" type="q222:ServiceResult" />
+        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="sikringsordnings" nillable="true" type="q223:ArrayOfSikringsordningView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMySikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q224:SikringsordningSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMySikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q225="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchMySikringsordningResult" nillable="true" type="q225:ServiceResult" />
+        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="sikringsordnings" nillable="true" type="q226:ArrayOfSikringsordningView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMySikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="sikringsordning" nillable="true" type="q227:SikringsordningUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMySikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateMySikringsordningResult" nillable="true" type="q228:ServiceResult" />
+        <xs:element xmlns:q229="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q229:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMySikringsordning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q230="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q230:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMySikringsordningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q231="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteMySikringsordningResult" nillable="true" type="q231:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendom" nillable="true" type="q232:EjendomUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q233="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateEjendomResult" nillable="true" type="q233:ServiceResult" />
+        <xs:element xmlns:q234="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q234:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMinEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendom" nillable="true" type="q235:MinEjendomUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMinEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q236="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="UpdateMinEjendomResult" nillable="true" type="q236:ServiceResult" />
+        <xs:element xmlns:q237="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q237:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMinEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q238="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q238:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMinEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q239="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteMinEjendomResult" nillable="true" type="q239:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMinEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q240="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q240:MinEjendomSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMinEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q241="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchMinEjendomResult" nillable="true" type="q241:ServiceResult" />
+        <xs:element xmlns:q242="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendoms" nillable="true" type="q242:ArrayOfMinEjendom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEjendom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q243="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q243:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEjendomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q244="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="DeleteEjendomResult" nillable="true" type="q244:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEjendomInAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q245="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="criteria" nillable="true" type="q245:EjendomSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchEjendomInAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q246="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchEjendomInAllResult" nillable="true" type="q246:ServiceResult" />
+        <xs:element xmlns:q247="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ejendoms" nillable="true" type="q247:ArrayOfEjendom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIndberetningIsDone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q248="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q248:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIndberetningIsDoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q249="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="CheckIndberetningIsDoneResult" nillable="true" type="q249:ServiceResult" />
+        <xs:element xmlns:q250="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lackingitems" nillable="true" type="q250:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupCvr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cvrnr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupCvrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q251="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="LookupCvrResult" nillable="true" type="q251:ServiceResult" />
+        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="cvr" nillable="true" type="q252:Cvr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetLastImportedDateTime">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetLastImportedDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ResetLastImportedDateTimeResult" nillable="true" type="q253:ServiceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportRotteanmeldelsesPaabudstypeYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q254="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q254:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportRotteanmeldelsesPaabudstypeYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportRotteanmeldelsesPaabudstypeYearsResult" nillable="true" type="q255:ServiceResult" />
+        <xs:element xmlns:q256="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q256:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportRotteanmeldelsesPaabudstype">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="criteria" nillable="true" type="q257:RapportRotteanmeldelsesPaabudstypeSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportRotteanmeldelsesPaabudstypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRapportRotteanmeldelsesPaabudstypeResult" nillable="true" type="q258:ServiceResult" />
+        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="records" nillable="true" type="q259:ArrayOfRapportRotteanmeldelsesPaabudstype" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportIngenRoegProeveAarsagYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q260="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q260:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportIngenRoegProeveAarsagYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q261="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportIngenRoegProeveAarsagYearsResult" nillable="true" type="q261:ServiceResult" />
+        <xs:element xmlns:q262="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q262:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportIngenRoegProeveAarsag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q263="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="criteria" nillable="true" type="q263:RapportIngenRoegProeveAarsagSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportIngenRoegProeveAarsagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q264="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRapportIngenRoegProeveAarsagResult" nillable="true" type="q264:ServiceResult" />
+        <xs:element xmlns:q265="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="records" nillable="true" type="q265:ArrayOfRapportIngenRoegProeveAarsag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportKommuneOmkostningerYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q266="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q266:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportKommuneOmkostningerYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q267="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportKommuneOmkostningerYearsResult" nillable="true" type="q267:ServiceResult" />
+        <xs:element xmlns:q268="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q268:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportKommuneOmkostninger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q269="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="criteria" nillable="true" type="q269:RapportKommuneOmkostningerSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportKommuneOmkostningerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q270="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRapportKommuneOmkostningerResult" nillable="true" type="q270:ServiceResult" />
+        <xs:element xmlns:q271="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="records" nillable="true" type="q271:ArrayOfRapportKommuneOmkostninger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAarsagTyper">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAarsagTyperResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q272="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="ReadAarsagTyperResult" nillable="true" type="q272:ServiceResult" />
+        <xs:element xmlns:q273="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="records" nillable="true" type="q273:ArrayOfAarsagType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportOrienteringspligtStatusYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q274="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q274:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportOrienteringspligtStatusYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportOrienteringspligtStatusYearsResult" nillable="true" type="q275:ServiceResult" />
+        <xs:element xmlns:q276="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q276:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportOrienteringspligtStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="criteria" nillable="true" type="q277:RapportOrienteringspligtStatusSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRapportOrienteringspligtStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q278="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="SearchRapportOrienteringspligtStatusResult" nillable="true" type="q278:ServiceResult" />
+        <xs:element xmlns:q279="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" minOccurs="0" name="records" nillable="true" type="q279:ArrayOfRapportOrienteringspligtStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportGiftForbrugUdviklingsIndsatsYears">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q280="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="myndighedId" type="q280:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRapportGiftForbrugUdviklingsIndsatsYearsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q281="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="GetRapportGiftForbrugUdviklingsIndsatsYearsResult" nillable="true" type="q281:ServiceResult" />
+        <xs:element xmlns:q282="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="years" nillable="true" type="q282:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

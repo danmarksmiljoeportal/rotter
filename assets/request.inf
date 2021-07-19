@@ -1,0 +1,16 @@
+[NewRequest]
+Subject = "CN=mydomain.com"  ; E.g. "CN=www.contoso.com", or "CN=*.contoso.com" for a wildcard certificate
+Exportable = TRUE
+KeyLength = 2048              ; KeyLength can be 2048, 4096, 8192, or 16384 (required minimum is 2048)
+KeySpec = 1
+KeyUsage = 0xA0
+MachineKeySet = True
+ProviderName = "Microsoft Enhanced RSA and AES Cryptographic Provider"
+ProviderType = 12
+HashAlgorithm = SHA256
+RequestType = Cert            ; Self-signed certificate
+ValidityPeriod = Years
+ValidityPeriodUnits = 20
+
+[EnhancedKeyUsageExtension]
+OID=1.3.6.1.5.5.7.3.1         ; Server Authentication

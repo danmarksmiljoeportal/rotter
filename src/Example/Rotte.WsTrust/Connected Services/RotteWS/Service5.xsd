@@ -1,0 +1,1694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Notifications" />
+  <xs:complexType name="ServiceResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResult" nillable="true" type="tns:ServiceResult" />
+  <xs:complexType name="Metadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Metadata" nillable="true" type="tns:Metadata" />
+  <xs:complexType name="MinEjendomSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FreeTextSearch" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q1:ArrayOfguid" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MinEjendomSearch" nillable="true" type="tns:MinEjendomSearch" />
+  <xs:complexType name="PageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageNum" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageInfo" nillable="true" type="tns:PageInfo" />
+  <xs:complexType name="ArrayOfMinEjendom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MinEjendom" nillable="true" type="tns:MinEjendom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMinEjendom" nillable="true" type="tns:ArrayOfMinEjendom" />
+  <xs:complexType name="MinEjendom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Bekaempelsesfirma" />
+      <xs:element minOccurs="0" name="Ejendomsnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Ejendomstype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="OprettetDato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Side" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MinEjendom" nillable="true" type="tns:MinEjendom" />
+  <xs:complexType name="Bekaempelsesfirma">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactEmails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactSMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirmaLukketDato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsBekaempelsesfirma" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGiftleverandoer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Opfoelgningsvarsel" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bekaempelsesfirma" nillable="true" type="tns:Bekaempelsesfirma" />
+  <xs:complexType name="Point">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Point" nillable="true" type="tns:Point" />
+  <xs:complexType name="ContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brugernavn" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ContactEmails" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ContactSMS" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Opfoelgningsvarsel" type="xs:int" />
+      <xs:element minOccurs="0" name="UserType" type="tns:UserType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactInfo" nillable="true" type="tns:ContactInfo" />
+  <xs:simpleType name="UserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="R1" />
+      <xs:enumeration value="R2" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserType" nillable="true" type="tns:UserType" />
+  <xs:complexType name="UpdateContactInfo">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ContactEmails" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ContactSMS" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Opfoelgningsvarsel" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateContactInfo" nillable="true" type="tns:UpdateContactInfo" />
+  <xs:complexType name="BrugerView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminInfoModtager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Bekaempelsesfirma" />
+      <xs:element minOccurs="0" name="Brugernavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactInfo" nillable="true" type="tns:ContactInfo" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Myndighed" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Roles" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrugerView" nillable="true" type="tns:BrugerView" />
+  <xs:complexType name="Myndighed">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContactEmails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactSMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsKommune" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MuniciplaityCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Myndighed" nillable="true" type="tns:Myndighed" />
+  <xs:complexType name="NotificationSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExecuteDatoFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExecuteDatoTo" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Notifications" minOccurs="0" name="Messagetype" nillable="true" type="q7:MessageType" />
+      <xs:element minOccurs="0" name="OprettetDatoFrom" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OprettetDatoTo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceiverBekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReceiverMyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="SenderBekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="SenderMyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Skip" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SortingInfo" nillable="true" type="tns:SortingInfo" />
+      <xs:element minOccurs="0" name="Take" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationSearch" nillable="true" type="tns:NotificationSearch" />
+  <xs:complexType name="SortingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Property" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SortingInfo" nillable="true" type="tns:SortingInfo" />
+  <xs:complexType name="QueryResponseOfNotificationViewH3A2rP8r">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="QueryResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NotificationView" Namespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfNotificationView" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResponseOfNotificationViewH3A2rP8r" nillable="true" type="tns:QueryResponseOfNotificationViewH3A2rP8r" />
+  <xs:complexType name="ArrayOfNotificationView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificationView" nillable="true" type="tns:NotificationView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificationView" nillable="true" type="tns:ArrayOfNotificationView" />
+  <xs:complexType name="NotificationView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Afslutningsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Anmeldelsesdato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelseForetaget" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BekaempelsestypeNavn" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Bekaemper" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Besked" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bruger" nillable="true" type="tns:Bruger" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomView" />
+      <xs:element minOccurs="0" name="EmailIsExecuted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ExecuteDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Notifications" minOccurs="0" name="MessageType" type="q9:MessageType" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Opfoelgningsdatoer" nillable="true" type="q10:ArrayOfdateTime" />
+      <xs:element minOccurs="0" name="OprettetAfBrugerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="OprettetDato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceiverBekaempelsesfirma" nillable="true" type="tns:Bekaempelsesfirma" />
+      <xs:element minOccurs="0" name="ReceiverBekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReceiverMyndighed" nillable="true" type="tns:Myndighed" />
+      <xs:element minOccurs="0" name="ReceiverMyndighedId" nillable="true" type="ser:guid" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RotteanmeldelseAarsag" nillable="true" type="q11:ArrayOfstring" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SMSIsExecuted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SenderBekaempelsesfirma" nillable="true" type="tns:Bekaempelsesfirma" />
+      <xs:element minOccurs="0" name="SenderBekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="SenderMyndighed" nillable="true" type="tns:Myndighed" />
+      <xs:element minOccurs="0" name="SenderMyndighedId" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationView" nillable="true" type="tns:NotificationView" />
+  <xs:complexType name="Bruger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdminInfoModtager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brugernavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="MyndighedCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="MyndighedNavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bruger" nillable="true" type="tns:Bruger" />
+  <xs:complexType name="EjendomView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Afloebsforhold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAIErrorMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAIObjectId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ejendomsnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Ejendomstype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsBBRContacted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDAWAContacted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="SenesteRotteforekomst" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SenesteTilsynsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Side" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tilsyns" nillable="true" type="tns:ArrayOfTilsyn" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EjendomView" nillable="true" type="tns:EjendomView" />
+  <xs:complexType name="ArrayOfTilsyn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tilsyn" nillable="true" type="tns:Tilsyn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTilsyn" nillable="true" type="tns:ArrayOfTilsyn" />
+  <xs:complexType name="Tilsyn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Besoegsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsRotteanmeldelse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tilsynsresultat" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tilsyn" nillable="true" type="tns:Tilsyn" />
+  <xs:complexType name="RotteanmeldelseDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileContent" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseDocument" nillable="true" type="tns:RotteanmeldelseDocument" />
+  <xs:complexType name="ContentResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContentResult" nillable="true" type="tns:ContentResult" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Document" nillable="true" type="tns:Document" />
+  <xs:complexType name="ArrayOfDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocument" nillable="true" type="tns:ArrayOfDocument" />
+  <xs:complexType name="ParentRotteanmeldelseInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParentRotteanmeldelseInput" nillable="true" type="tns:ParentRotteanmeldelseInput" />
+  <xs:complexType name="RotteanmeldelsePageSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnmeldelsesdatoFra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AnmeldelsesdatoTil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Bekaempere" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GetMunicipalityLockedInfo" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Husnr" nillable="true" type="q12:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsDeleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFromBf" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PageInfo" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Postnr" nillable="true" type="q13:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SortingInfo" nillable="true" type="tns:SortingInfo" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Vejnavn" nillable="true" type="q14:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelsePageSearch" nillable="true" type="tns:RotteanmeldelsePageSearch" />
+  <xs:complexType name="RotteanmeldelsePageSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfPagedRotteanmeldelseView" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelsePageSearchResult" nillable="true" type="tns:RotteanmeldelsePageSearchResult" />
+  <xs:complexType name="ArrayOfPagedRotteanmeldelseView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PagedRotteanmeldelseView" nillable="true" type="tns:PagedRotteanmeldelseView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPagedRotteanmeldelseView" nillable="true" type="tns:ArrayOfPagedRotteanmeldelseView" />
+  <xs:complexType name="PagedRotteanmeldelseView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Afslutningsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Anmeldelsesdato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bekaemper" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomView" />
+      <xs:element minOccurs="0" name="HasNotification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LatestBekaempelse" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MunicipalityIsLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NeedsAcceptance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OprettetDato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RotteanmeldelseRef" nillable="true" type="tns:RotteanmeldelseRef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedRotteanmeldelseView" nillable="true" type="tns:PagedRotteanmeldelseView" />
+  <xs:complexType name="RotteanmeldelseRef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsParent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NeedsAcceptance" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseRef" nillable="true" type="tns:RotteanmeldelseRef" />
+  <xs:complexType name="MineEjendomPageSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfMinEjendom" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MineEjendomPageSearchResult" nillable="true" type="tns:MineEjendomPageSearchResult" />
+  <xs:complexType name="RotteanmeldelseTypeAheadInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="End" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SearchText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Start" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Take" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseTypeAheadInput" nillable="true" type="tns:RotteanmeldelseTypeAheadInput" />
+  <xs:complexType name="ArrayOfRotteanmeldelseTypeAheadItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RotteanmeldelseTypeAheadItem" nillable="true" type="tns:RotteanmeldelseTypeAheadItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRotteanmeldelseTypeAheadItem" nillable="true" type="tns:ArrayOfRotteanmeldelseTypeAheadItem" />
+  <xs:complexType name="RotteanmeldelseTypeAheadItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseTypeAheadItem" nillable="true" type="tns:RotteanmeldelseTypeAheadItem" />
+  <xs:complexType name="SikringsordningerTypeAheadInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndOpsigelsesdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FromStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SearchText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Take" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningerTypeAheadInput" nillable="true" type="tns:SikringsordningerTypeAheadInput" />
+  <xs:complexType name="ArrayOfSikringsordningerTypeAheadItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SikringsordningerTypeAheadItem" nillable="true" type="tns:SikringsordningerTypeAheadItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSikringsordningerTypeAheadItem" nillable="true" type="tns:ArrayOfSikringsordningerTypeAheadItem" />
+  <xs:complexType name="SikringsordningerTypeAheadItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningerTypeAheadItem" nillable="true" type="tns:SikringsordningerTypeAheadItem" />
+  <xs:complexType name="SikringsordningerItemsSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromOpsigelsesDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FromStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Husnr" nillable="true" type="q15:ArrayOfstring" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PageIndex" nillable="true" type="xs:int" />
+      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Postnr" nillable="true" type="q16:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SortingInfo" nillable="true" type="tns:SortingInfo" />
+      <xs:element minOccurs="0" name="Take" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ToOpsigelsesDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Vejnavn" nillable="true" type="q17:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningerItemsSearch" nillable="true" type="tns:SikringsordningerItemsSearch" />
+  <xs:complexType name="SikringsordningerSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ArrayOfSikringsordningView" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningerSearchResult" nillable="true" type="tns:SikringsordningerSearchResult" />
+  <xs:complexType name="ArrayOfSikringsordningView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SikringsordningView" nillable="true" type="tns:SikringsordningView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSikringsordningView" nillable="true" type="tns:ArrayOfSikringsordningView" />
+  <xs:complexType name="SikringsordningView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomView" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="OprettetDato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Opsigelsesdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Startdato" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningView" nillable="true" type="tns:SikringsordningView" />
+  <xs:complexType name="AuditInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuditInformation" nillable="true" type="tns:AuditInformation" />
+  <xs:complexType name="EjendomValidityCheckingModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Afslutningsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Anmeldelsesdato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Bekaempelsesudfoerende" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Myndighed" type="ser:guid" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EjendomValidityCheckingModel" nillable="true" type="tns:EjendomValidityCheckingModel" />
+  <xs:complexType name="DuplicateRotteanmeldlseView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RotteanmeldelseId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Valid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DuplicateRotteanmeldlseView" nillable="true" type="tns:DuplicateRotteanmeldlseView" />
+  <xs:complexType name="ApiCredentialSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApiCredentialSearch" nillable="true" type="tns:ApiCredentialSearch" />
+  <xs:complexType name="ArrayOfApiCredential">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApiCredential" nillable="true" type="tns:ApiCredential" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApiCredential" nillable="true" type="tns:ArrayOfApiCredential" />
+  <xs:complexType name="ApiCredential">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ApiKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OprettetDato" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApiCredential" nillable="true" type="tns:ApiCredential" />
+  <xs:complexType name="ArrayOfPushNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PushNotification" nillable="true" type="tns:PushNotification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPushNotification" nillable="true" type="tns:ArrayOfPushNotification" />
+  <xs:complexType name="PushNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrugerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PushNotification" nillable="true" type="tns:PushNotification" />
+  <xs:complexType name="ArrayOfClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Claim" nillable="true" type="tns:Claim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClaim" nillable="true" type="tns:ArrayOfClaim" />
+  <xs:complexType name="Claim">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaimType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Issuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Claim" nillable="true" type="tns:Claim" />
+  <xs:complexType name="ArrayOfBruger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bruger" nillable="true" type="tns:Bruger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBruger" nillable="true" type="tns:ArrayOfBruger" />
+  <xs:complexType name="ArrayOfMyndighed">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Myndighed" nillable="true" type="tns:Myndighed" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMyndighed" nillable="true" type="tns:ArrayOfMyndighed" />
+  <xs:complexType name="ArrayOfDyr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dyr" nillable="true" type="tns:Dyr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDyr" nillable="true" type="tns:ArrayOfDyr" />
+  <xs:complexType name="Dyr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dyr" nillable="true" type="tns:Dyr" />
+  <xs:complexType name="ArrayOfPaabudstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Paabudstype" nillable="true" type="tns:Paabudstype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaabudstype" nillable="true" type="tns:ArrayOfPaabudstype" />
+  <xs:complexType name="Paabudstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Paabudstype" nillable="true" type="tns:Paabudstype" />
+  <xs:complexType name="ArrayOfIngenRoegProeveAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IngenRoegProeveAarsag" nillable="true" type="tns:IngenRoegProeveAarsag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIngenRoegProeveAarsag" nillable="true" type="tns:ArrayOfIngenRoegProeveAarsag" />
+  <xs:complexType name="IngenRoegProeveAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IngenRoegProeveAarsag" nillable="true" type="tns:IngenRoegProeveAarsag" />
+  <xs:complexType name="ArrayOfIngenBekaempelseAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IngenBekaempelseAarsag" nillable="true" type="tns:IngenBekaempelseAarsag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIngenBekaempelseAarsag" nillable="true" type="tns:ArrayOfIngenBekaempelseAarsag" />
+  <xs:complexType name="IngenBekaempelseAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IngenBekaempelseAarsag" nillable="true" type="tns:IngenBekaempelseAarsag" />
+  <xs:complexType name="ArrayOfBekaempelsestype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bekaempelsestype" nillable="true" type="tns:Bekaempelsestype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsestype" nillable="true" type="tns:ArrayOfBekaempelsestype" />
+  <xs:complexType name="Bekaempelsestype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFaelde" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGift" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bekaempelsestype" nillable="true" type="tns:Bekaempelsestype" />
+  <xs:complexType name="ArrayOfRotterObserveret">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RotterObserveret" nillable="true" type="tns:RotterObserveret" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRotterObserveret" nillable="true" type="tns:ArrayOfRotterObserveret" />
+  <xs:complexType name="RotterObserveret">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotterObserveret" nillable="true" type="tns:RotterObserveret" />
+  <xs:complexType name="ArrayOfTilsynsresultat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tilsynsresultat" nillable="true" type="tns:Tilsynsresultat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTilsynsresultat" nillable="true" type="tns:ArrayOfTilsynsresultat" />
+  <xs:complexType name="Tilsynsresultat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tilsynsresultat" nillable="true" type="tns:Tilsynsresultat" />
+  <xs:complexType name="ArrayOfAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Aarsag" nillable="true" type="tns:Aarsag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAarsag" nillable="true" type="tns:ArrayOfAarsag" />
+  <xs:complexType name="Aarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AarsagTypeId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notifikation" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Aarsag" nillable="true" type="tns:Aarsag" />
+  <xs:complexType name="ArrayOfGifttype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gifttype" nillable="true" type="tns:Gifttype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGifttype" nillable="true" type="tns:ArrayOfGifttype" />
+  <xs:complexType name="Gifttype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Gifttype" nillable="true" type="tns:Gifttype" />
+  <xs:complexType name="ArrayOfBekaempelsesfirmaPaabudstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BekaempelsesfirmaPaabudstype" nillable="true" type="tns:BekaempelsesfirmaPaabudstype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsesfirmaPaabudstype" nillable="true" type="tns:ArrayOfBekaempelsesfirmaPaabudstype" />
+  <xs:complexType name="BekaempelsesfirmaPaabudstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesfirmaPaabudstype" nillable="true" type="tns:BekaempelsesfirmaPaabudstype" />
+  <xs:complexType name="ArrayOfEjendomstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ejendomstype" nillable="true" type="tns:Ejendomstype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEjendomstype" nillable="true" type="tns:ArrayOfEjendomstype" />
+  <xs:complexType name="Ejendomstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Branchekode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Landbrug" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ejendomstype" nillable="true" type="tns:Ejendomstype" />
+  <xs:complexType name="ArrayOfGift">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Gift" nillable="true" type="tns:Gift" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGift" nillable="true" type="tns:ArrayOfGift" />
+  <xs:complexType name="Gift">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Maaleenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxVaerdi" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinVaerdi" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Styrke" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Gift" nillable="true" type="tns:Gift" />
+  <xs:complexType name="BekaempelsesfirmaSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsBekaempelsesfirma" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGiftleverandoer" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesfirmaSearch" nillable="true" type="tns:BekaempelsesfirmaSearch" />
+  <xs:complexType name="ArrayOfBekaempelsesfirmaView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BekaempelsesfirmaView" nillable="true" type="tns:BekaempelsesfirmaView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsesfirmaView" nillable="true" type="tns:ArrayOfBekaempelsesfirmaView" />
+  <xs:complexType name="BekaempelsesfirmaView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AendretAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactEmails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactSMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountUsage" type="xs:int" />
+      <xs:element minOccurs="0" name="Cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirmaLukketDato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsBekaempelsesfirma" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGiftleverandoer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsR2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesfirmaView" nillable="true" type="tns:BekaempelsesfirmaView" />
+  <xs:complexType name="RotteanmeldelseUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aarsags" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Afslutningsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Anmeldelsesdato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BFBemaerkning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeboereInformeret" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BekaempelseForetaget" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Bekaempelsestypes" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Bekaempelsesudfoerende" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bekaemper" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bemaerkning" nillable="true" type="xs:string" />
+      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentToDelete" nillable="true" type="q18:ArrayOfguid" />
+      <xs:element minOccurs="0" name="Dyr" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomUpdate" />
+      <xs:element minOccurs="0" name="FindesRotter" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GiftAnvendelses" nillable="true" type="tns:ArrayOfGiftAnvendelse" />
+      <xs:element minOccurs="0" name="GiftReturneds" nillable="true" type="tns:ArrayOfGiftReturned" />
+      <xs:element minOccurs="0" name="HaandhaevelseGennemfoert" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Haandhaevelsestype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IngenBekaempelseAarsag" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="IngenRoegProeveAarsag" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="IsIndendoers" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Koordinatsystem" type="xs:int" />
+      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OpfoelgningsdatoerDato" nillable="true" type="q19:ArrayOfdateTime" />
+      <xs:element minOccurs="0" name="Paabudstypes" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="RoegProeveForetaget" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RotterObserverets" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Sikringsordning" nillable="true" type="tns:Sikringsordning" />
+      <xs:element minOccurs="0" name="Tilsyn" nillable="true" type="tns:Tilsyn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseUpdate" nillable="true" type="tns:RotteanmeldelseUpdate" />
+  <xs:complexType name="ArrayOfMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Metadata" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetadata" nillable="true" type="tns:ArrayOfMetadata" />
+  <xs:complexType name="EjendomUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Afloebsforhold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAIErrorMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAIObjectId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ejendomsnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Ejendomstype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsBBRContacted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDAWAContacted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Koordinatsystem" type="xs:int" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="SenesteRotteforekomst" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SenesteTilsynsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Side" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EjendomUpdate" nillable="true" type="tns:EjendomUpdate" />
+  <xs:complexType name="ArrayOfGiftAnvendelse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiftAnvendelse" nillable="true" type="tns:GiftAnvendelse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiftAnvendelse" nillable="true" type="tns:ArrayOfGiftAnvendelse" />
+  <xs:complexType name="GiftAnvendelse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gift" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Gifttype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Maaleenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maengde" type="xs:double" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftAnvendelse" nillable="true" type="tns:GiftAnvendelse" />
+  <xs:complexType name="ArrayOfGiftReturned">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiftReturned" nillable="true" type="tns:GiftReturned" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiftReturned" nillable="true" type="tns:ArrayOfGiftReturned" />
+  <xs:complexType name="GiftReturned">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gift" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Gifttype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Maaleenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maengde" type="xs:double" />
+      <xs:element minOccurs="0" name="RotteanmeldelseId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftReturned" nillable="true" type="tns:GiftReturned" />
+  <xs:complexType name="Sikringsordning">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sikringsordning" nillable="true" type="tns:Sikringsordning" />
+  <xs:complexType name="RotteanmeldelseSearch">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AarsagIds" nillable="true" type="q20:ArrayOfguid" />
+      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Afloebsforholds" nillable="true" type="q21:ArrayOfint" />
+      <xs:element minOccurs="0" name="AfslutningsdatoFra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AfslutningsdatoTil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AllReturnedGiftsAreEmpty" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnmeldelsesdatoFra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AnmeldelsesdatoTil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AntalOpfoelgningsdatoerSearchType" type="tns:SearchType" />
+      <xs:element minOccurs="0" name="AntalOpfoelgningsdatoerValueEnd" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalOpfoelgningsdatoerValueStart" type="xs:int" />
+      <xs:element minOccurs="0" name="AtLeastOneGiftReturnedGreaterThanZero" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeboereInformeret" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BekaempelseForetaget" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BekaempelsestypeIds" nillable="true" type="q22:ArrayOfguid" />
+      <xs:element minOccurs="0" name="Bekaempelsesudfoerende" nillable="true" type="xs:string" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DyrIds" nillable="true" type="q23:ArrayOfguid" />
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EjendomIds" nillable="true" type="q24:ArrayOfguid" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EjendomstypeIds" nillable="true" type="q25:ArrayOfguid" />
+      <xs:element minOccurs="0" name="GetMunicipalityLockedInfo" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GiftIds" nillable="true" type="q26:ArrayOfguid" />
+      <xs:element minOccurs="0" name="HaandhaevelseGennemfoert" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Haandhaevelsestype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q27:ArrayOfguid" />
+      <xs:element minOccurs="0" name="IncludeOnlyDisabledRotteanmeldelse" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeOnlyParentRotteanmeldelse" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IngenBekaempelseAarsagId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IngenRoegProeveAarsagId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsCompleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDeleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLightweight" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUncleanAddress" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManglerAccept" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="NoReturnedGiftButAtLeaseOneInUsed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OprettetAfBrugerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="OprettetAfKommunen" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OprettetFra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OprettetTil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OutsideMinMax" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PaabudstypeIds" nillable="true" type="q28:ArrayOfguid" />
+      <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:PageInfo" />
+      <xs:element minOccurs="0" name="Postnr" nillable="true" type="xs:int" />
+      <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReturnedGiftIds" nillable="true" type="q29:ArrayOfguid" />
+      <xs:element minOccurs="0" name="RoegProeveForetaget" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RotterObserveretIds" nillable="true" type="q30:ArrayOfguid" />
+      <xs:element minOccurs="0" name="SimpleBekaempelsesfirmaIdSearch" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="SortingInfo" nillable="true" type="tns:SortingInfo" />
+      <xs:element minOccurs="0" name="TidsrumMellemAnmeldAfslutSearchType" type="tns:SearchType" />
+      <xs:element minOccurs="0" name="TidsrumMellemAnmeldAfslutValueEnd" type="xs:int" />
+      <xs:element minOccurs="0" name="TidsrumMellemAnmeldAfslutValueStart" type="xs:int" />
+      <xs:element minOccurs="0" name="UdfoertMedSikringsordning" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdatedAfterDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedUntilDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+      <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ZoneIds" nillable="true" type="q31:ArrayOfguid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseSearch" nillable="true" type="tns:RotteanmeldelseSearch" />
+  <xs:simpleType name="SearchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Between" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="MoreThan" />
+      <xs:enumeration value="Exactly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchType" nillable="true" type="tns:SearchType" />
+  <xs:complexType name="ArrayOfRotteanmeldelseView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RotteanmeldelseView" nillable="true" type="tns:RotteanmeldelseView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRotteanmeldelseView" nillable="true" type="tns:ArrayOfRotteanmeldelseView" />
+  <xs:complexType name="RotteanmeldelseView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aarsags" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="AendretAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Afslutningsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Anmeldelsesdato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Autorisationsnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BFBemaerkning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeboereInformeret" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BekaempelseForetaget" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Bekaempelsestypes" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Bekaempelsesudfoerende" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bekaemper" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bemaerkning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DaiObjectId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="DaiStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentLinks" nillable="true" type="tns:ArrayOfDocumentLink" />
+      <xs:element minOccurs="0" name="Dyr" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomView" />
+      <xs:element minOccurs="0" name="FindesRotter" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GiftAnvendelses" nillable="true" type="tns:ArrayOfGiftAnvendelse" />
+      <xs:element minOccurs="0" name="GiftReturneds" nillable="true" type="tns:ArrayOfGiftReturned" />
+      <xs:element minOccurs="0" name="HaandhaevelseGennemfoert" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Haandhaevelsestype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasNotification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IngenBekaempelseAarsag" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="IngenRoegProeveAarsag" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIndendoers" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LatestBekaempelse" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MunicipalityIsLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NeedsAcceptance" type="xs:boolean" />
+      <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OpfoelgningsdatoerDato" nillable="true" type="q32:ArrayOfdateTime" />
+      <xs:element minOccurs="0" name="OprettetAf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="OprettetDato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Paabudstypes" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="RoegProeveForetaget" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RotteanmeldelseRef" nillable="true" type="tns:RotteanmeldelseRef" />
+      <xs:element minOccurs="0" name="RotterObserverets" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Sikringsordning" nillable="true" type="tns:Sikringsordning" />
+      <xs:element minOccurs="0" name="Tilsyn" nillable="true" type="tns:Tilsyn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RotteanmeldelseView" nillable="true" type="tns:RotteanmeldelseView" />
+  <xs:complexType name="ArrayOfDocumentLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentLink" nillable="true" type="tns:DocumentLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentLink" nillable="true" type="tns:ArrayOfDocumentLink" />
+  <xs:complexType name="DocumentLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentLink" nillable="true" type="tns:DocumentLink" />
+  <xs:complexType name="AllMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AarsagTypes" nillable="true" type="tns:ArrayOfAarsagType" />
+      <xs:element minOccurs="0" name="Aarsags" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaPaabudstypes" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirmas" nillable="true" type="tns:ArrayOfBekaempelsesfirma" />
+      <xs:element minOccurs="0" name="Bekaempelsestypes" nillable="true" type="tns:ArrayOfBekaempelsestypeView" />
+      <xs:element minOccurs="0" name="Dyrs" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="Ejendomstypes" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="Gifts" nillable="true" type="tns:ArrayOfGiftView" />
+      <xs:element minOccurs="0" name="Gifttypes" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="IngenBekaempelseAarsags" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="IngenRoegProeveAarsags" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="Myndigheds" nillable="true" type="tns:ArrayOfMyndighedView" />
+      <xs:element minOccurs="0" name="Paabudstypes" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="RotterObserverets" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="Tilsynsresultats" nillable="true" type="tns:ArrayOfMetadataView" />
+      <xs:element minOccurs="0" name="Zones" nillable="true" type="tns:ArrayOfMetadataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AllMetadata" nillable="true" type="tns:AllMetadata" />
+  <xs:complexType name="ArrayOfAarsagType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AarsagType" nillable="true" type="tns:AarsagType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAarsagType" nillable="true" type="tns:ArrayOfAarsagType" />
+  <xs:complexType name="AarsagType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AarsagType" nillable="true" type="tns:AarsagType" />
+  <xs:complexType name="ArrayOfMetadataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetadataView" nillable="true" type="tns:MetadataView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetadataView" nillable="true" type="tns:ArrayOfMetadataView" />
+  <xs:complexType name="MetadataView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataView" nillable="true" type="tns:MetadataView" />
+  <xs:complexType name="ArrayOfBekaempelsesfirma">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bekaempelsesfirma" nillable="true" type="tns:Bekaempelsesfirma" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsesfirma" nillable="true" type="tns:ArrayOfBekaempelsesfirma" />
+  <xs:complexType name="ArrayOfBekaempelsestypeView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BekaempelsestypeView" nillable="true" type="tns:BekaempelsestypeView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsestypeView" nillable="true" type="tns:ArrayOfBekaempelsestypeView" />
+  <xs:complexType name="BekaempelsestypeView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MetadataView">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsGift" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BekaempelsestypeView" nillable="true" type="tns:BekaempelsestypeView" />
+  <xs:complexType name="ArrayOfGiftView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiftView" nillable="true" type="tns:GiftView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiftView" nillable="true" type="tns:ArrayOfGiftView" />
+  <xs:complexType name="GiftView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Maaleenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxVaerdi" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinVaerdi" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Styrke" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftView" nillable="true" type="tns:GiftView" />
+  <xs:complexType name="ArrayOfMyndighedView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyndighedView" nillable="true" type="tns:MyndighedView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMyndighedView" nillable="true" type="tns:ArrayOfMyndighedView" />
+  <xs:complexType name="MyndighedView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aktiv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContactEmails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactSMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsKommune" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MuniciplaityCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyndighedView" nillable="true" type="tns:MyndighedView" />
+  <xs:complexType name="EjendomSearch">
+    <xs:sequence>
+      <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Afloebsforholds" nillable="true" type="q33:ArrayOfint" />
+      <xs:element minOccurs="0" name="Ejendomsnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EjendomstypeIds" nillable="true" type="q34:ArrayOfguid" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q35:ArrayOfguid" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+      <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ZoneIds" nillable="true" type="q36:ArrayOfguid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EjendomSearch" nillable="true" type="tns:EjendomSearch" />
+  <xs:complexType name="ArrayOfEjendom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ejendom" nillable="true" type="tns:Ejendom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEjendom" nillable="true" type="tns:ArrayOfEjendom" />
+  <xs:complexType name="Ejendom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Afloebsforhold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAIErrorMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DAIObjectId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ejendomsnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Ejendomstype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsBBRContacted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDAWAContacted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="OprettetDato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="SenesteRotteforekomst" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SenesteTilsynsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Side" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sikringsordnings" nillable="true" type="tns:ArrayOfSikringsordning" />
+      <xs:element minOccurs="0" name="Tilsyns" nillable="true" type="tns:ArrayOfTilsyn" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ejendom" nillable="true" type="tns:Ejendom" />
+  <xs:complexType name="ArrayOfSikringsordning">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sikringsordning" nillable="true" type="tns:Sikringsordning" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSikringsordning" nillable="true" type="tns:ArrayOfSikringsordning" />
+  <xs:complexType name="Indberetning">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element minOccurs="0" name="AnsvarligEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnsvarligNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnsvarligTelefon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AntalInstitutionerMedRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalKommunaleInstitutioner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudAndre" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudBekaempelse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudBygningsgennemgang" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudOplysningerOmGift" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudResistensstrategi" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudSikringsordning" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPrivateInstitutioner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPrivateInstitutionerMedRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPrivateNejTilRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRotteanmeldelser" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRottespaererPaaPrivate" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalSikringsordninger" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalTilsyn" type="xs:int" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="BekaempelsesmiddelLeverandoers" nillable="true" type="tns:ArrayOfBekaempelsesmiddelLeverandoer" />
+      <xs:element minOccurs="0" name="Bekaempelsesudfoerende" type="xs:int" />
+      <xs:element minOccurs="0" name="Bemaerkning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Firmakontraktsum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GiftAnvendelseBekaempelsesfirmas" nillable="true" type="tns:ArrayOfGiftAnvendelseBekaempelsesfirma" />
+      <xs:element minOccurs="0" name="GiftAnvendelseKloaks" nillable="true" type="tns:ArrayOfGiftAnvendelseKloak" />
+      <xs:element minOccurs="0" name="HandlingsplanLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HandlingsplanOpkraevesGebyr" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HandlingsplanRevideret" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HandlingsplanRevisionsDato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IndkoebSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KloakAntalElektroniskeFaelder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KloakAntalRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KloakBekaempelse" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KloakBetaler" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KloakUdfoerende" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KommunalBekaempelseSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LoenudgifterSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="OrienteringAfBorgere" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrienteringBegrundelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestriktionPrivatErhverv" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RestriktionPrivatFirma" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TilsynspligtigeEjendomme" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Indberetning" nillable="true" type="tns:Indberetning" />
+  <xs:complexType name="ArrayOfBekaempelsesmiddelLeverandoer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BekaempelsesmiddelLeverandoer" nillable="true" type="tns:BekaempelsesmiddelLeverandoer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsesmiddelLeverandoer" nillable="true" type="tns:ArrayOfBekaempelsesmiddelLeverandoer" />
+  <xs:complexType name="BekaempelsesmiddelLeverandoer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesmiddelLeverandoer" nillable="true" type="tns:BekaempelsesmiddelLeverandoer" />
+  <xs:complexType name="ArrayOfGiftAnvendelseBekaempelsesfirma">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiftAnvendelseBekaempelsesfirma" nillable="true" type="tns:GiftAnvendelseBekaempelsesfirma" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiftAnvendelseBekaempelsesfirma" nillable="true" type="tns:ArrayOfGiftAnvendelseBekaempelsesfirma" />
+  <xs:complexType name="GiftAnvendelseBekaempelsesfirma">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="GiftId" type="ser:guid" />
+      <xs:element minOccurs="0" name="GifttypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Maengde" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftAnvendelseBekaempelsesfirma" nillable="true" type="tns:GiftAnvendelseBekaempelsesfirma" />
+  <xs:complexType name="ArrayOfGiftAnvendelseKloak">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiftAnvendelseKloak" nillable="true" type="tns:GiftAnvendelseKloak" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiftAnvendelseKloak" nillable="true" type="tns:ArrayOfGiftAnvendelseKloak" />
+  <xs:complexType name="GiftAnvendelseKloak">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ansvarlig" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Gift" nillable="true" type="tns:GiftMetadata" />
+      <xs:element minOccurs="0" name="Gifttype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Maengde" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftAnvendelseKloak" nillable="true" type="tns:GiftAnvendelseKloak" />
+  <xs:complexType name="GiftMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Maaleenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftMetadata" nillable="true" type="tns:GiftMetadata" />
+  <xs:complexType name="IndberetningSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AarFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="AarTo" type="xs:int" />
+      <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q37:ArrayOfguid" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndberetningSearch" nillable="true" type="tns:IndberetningSearch" />
+  <xs:complexType name="ArrayOfIndberetningView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndberetningView" nillable="true" type="tns:IndberetningView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndberetningView" nillable="true" type="tns:ArrayOfIndberetningView" />
+  <xs:complexType name="IndberetningView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element minOccurs="0" name="AendretAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="AnsvarligEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnsvarligNavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnsvarligTelefon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AntalInstitutionerMedRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalKommunaleInstitutioner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudAndre" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudBekaempelse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudBygningsgennemgang" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudOplysningerOmGift" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudResistensstrategi" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPaabudSikringsordning" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPrivateInstitutioner" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPrivateInstitutionerMedRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalPrivateNejTilRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRotteanmeldelserKommune" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRotteanmeldelserR1" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRotteanmeldelserR2" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalRottespaererPaaPrivate" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalSikringsordninger" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalTilsyn" type="xs:int" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="BekaempelsesmiddelLeverandoers" nillable="true" type="tns:ArrayOfMetadata" />
+      <xs:element minOccurs="0" name="Bekaempelsesudfoerende" type="xs:int" />
+      <xs:element minOccurs="0" name="Bemaerkning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Firmakontraktsum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GiftAnvendelseBekaempelsesfirmas" nillable="true" type="tns:ArrayOfGiftAnvendelseBekaempelsesfirmaView" />
+      <xs:element minOccurs="0" name="GiftAnvendelseKloaks" nillable="true" type="tns:ArrayOfGiftAnvendelseKloak" />
+      <xs:element minOccurs="0" name="HandlingsplanLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HandlingsplanOpkraevesGebyr" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HandlingsplanRevideret" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HandlingsplanRevisionsDato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Indbyggertal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IndkoebSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KloakAntalElektroniskeFaelder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KloakAntalRottespaerer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KloakBekaempelse" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KloakBetaler" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KloakUdfoerende" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KommunalBekaempelseSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LoenudgifterSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="OrienteringAfBorgere" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrienteringBegrundelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestriktionPrivatErhverv" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RestriktionPrivatFirma" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusAendrings" nillable="true" type="tns:ArrayOfStatusAendringView" />
+      <xs:element minOccurs="0" name="TilsynspligtigeEjendomme" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndberetningView" nillable="true" type="tns:IndberetningView" />
+  <xs:complexType name="ArrayOfGiftAnvendelseBekaempelsesfirmaView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiftAnvendelseBekaempelsesfirmaView" nillable="true" type="tns:GiftAnvendelseBekaempelsesfirmaView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiftAnvendelseBekaempelsesfirmaView" nillable="true" type="tns:ArrayOfGiftAnvendelseBekaempelsesfirmaView" />
+  <xs:complexType name="GiftAnvendelseBekaempelsesfirmaView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Gift" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="GiftMaaleenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gifttype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Maengde" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiftAnvendelseBekaempelsesfirmaView" nillable="true" type="tns:GiftAnvendelseBekaempelsesfirmaView" />
+  <xs:complexType name="ArrayOfStatusAendringView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusAendringView" nillable="true" type="tns:StatusAendringView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusAendringView" nillable="true" type="tns:ArrayOfStatusAendringView" />
+  <xs:complexType name="StatusAendringView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AendretAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Kommentar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusAendringView" nillable="true" type="tns:StatusAendringView" />
+  <xs:complexType name="TilsynSearch">
+    <xs:sequence>
+      <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Afloebsforholds" nillable="true" type="q38:ArrayOfint" />
+      <xs:element minOccurs="0" name="BesoegsdatoFra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BesoegsdatoTil" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EjendomId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsHome" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUncleanAddress" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="OprettetAfBrugerId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Postnr" nillable="true" type="xs:int" />
+      <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TilsynResultats" nillable="true" type="q39:ArrayOfguid" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TilsynSearch" nillable="true" type="tns:TilsynSearch" />
+  <xs:complexType name="ArrayOfTilsynRoot">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TilsynRoot" nillable="true" type="tns:TilsynRoot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTilsynRoot" nillable="true" type="tns:ArrayOfTilsynRoot" />
+  <xs:complexType name="TilsynRoot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Besoegsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomUpdate" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsHome" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRotteanmeldelse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Tilsynsresultat" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TilsynRoot" nillable="true" type="tns:TilsynRoot" />
+  <xs:complexType name="TilsynRootUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bemaerkninger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Besoegsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomUpdate" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsHome" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRotteanmeldelse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tilsynsresultat" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TilsynRootUpdate" nillable="true" type="tns:TilsynRootUpdate" />
+  <xs:complexType name="BekaempelsesfirmaPaabud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Beskrivelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PaabudstypeId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesfirmaPaabud" nillable="true" type="tns:BekaempelsesfirmaPaabud" />
+  <xs:complexType name="BekaempelsesfirmaPaabudSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DatoFra" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatoTil" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q40:ArrayOfguid" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="OprettetAfBrugerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PaabudstypeId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesfirmaPaabudSearch" nillable="true" type="tns:BekaempelsesfirmaPaabudSearch" />
+  <xs:complexType name="ArrayOfBekaempelsesfirmaPaabudView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BekaempelsesfirmaPaabudView" nillable="true" type="tns:BekaempelsesfirmaPaabudView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBekaempelsesfirmaPaabudView" nillable="true" type="tns:ArrayOfBekaempelsesfirmaPaabudView" />
+  <xs:complexType name="BekaempelsesfirmaPaabudView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AendretAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Beskrivelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dato" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Paabudstype" nillable="true" type="tns:Metadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BekaempelsesfirmaPaabudView" nillable="true" type="tns:BekaempelsesfirmaPaabudView" />
+  <xs:complexType name="SikringsordningUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCVR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ejendom" nillable="true" type="tns:EjendomUpdate" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Opsigelsesdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Startdato" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningUpdate" nillable="true" type="tns:SikringsordningUpdate" />
+  <xs:complexType name="SikringsordningSearch">
+    <xs:sequence>
+      <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Afloebsforholds" nillable="true" type="q41:ArrayOfint" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="EjendomId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromOpsigelsesDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FromStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q42:ArrayOfguid" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUncleanAddress" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="OverwriteServiceMaxRecord" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Postnr" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ToOpsigelsesDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedAfterDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedUntilDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SikringsordningSearch" nillable="true" type="tns:SikringsordningSearch" />
+  <xs:complexType name="BFGiftSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GiftId" nillable="true" type="ser:guid" />
+      <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q43:ArrayOfguid" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BFGiftSearch" nillable="true" type="tns:BFGiftSearch" />
+  <xs:complexType name="ArrayOfBFGiftView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BFGiftView" nillable="true" type="tns:BFGiftView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBFGiftView" nillable="true" type="tns:ArrayOfBFGiftView" />
+  <xs:complexType name="BFGiftView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element minOccurs="0" name="AendretAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Bekaempelsesfirma" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Gift" nillable="true" type="tns:GiftMetadata" />
+      <xs:element minOccurs="0" name="Gifttype" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Maengde" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="OprettetAfBruger" nillable="true" type="tns:AuditInformation" />
+      <xs:element minOccurs="0" name="Sikringsordning" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="SikringsordningEjendom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BFGiftView" nillable="true" type="tns:BFGiftView" />
+  <xs:complexType name="BFGiftUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaCvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BekaempelsesfirmaId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="GiftId" type="ser:guid" />
+      <xs:element minOccurs="0" name="GifttypeId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Maengde" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SikringsordningId" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BFGiftUpdate" nillable="true" type="tns:BFGiftUpdate" />
+  <xs:complexType name="ArrayOfIndbyggertalUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndbyggertalUpdate" nillable="true" type="tns:IndbyggertalUpdate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndbyggertalUpdate" nillable="true" type="tns:ArrayOfIndbyggertalUpdate" />
+  <xs:complexType name="IndbyggertalUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Indbyggertal" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndbyggertalUpdate" nillable="true" type="tns:IndbyggertalUpdate" />
+  <xs:complexType name="ArrayOfIndbyggertalView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndbyggertalView" nillable="true" type="tns:IndbyggertalView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndbyggertalView" nillable="true" type="tns:ArrayOfIndbyggertalView" />
+  <xs:complexType name="IndbyggertalView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Indbyggertal" type="xs:int" />
+      <xs:element minOccurs="0" name="MyndighedId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndbyggertalView" nillable="true" type="tns:IndbyggertalView" />
+  <xs:complexType name="MySikringsordningSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FromOpsigelsesDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FromStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MaxRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="ToOpsigelsesDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedAfterDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedUntilDateTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MySikringsordningSearch" nillable="true" type="tns:MySikringsordningSearch" />
+  <xs:complexType name="MinEjendomUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ejendomsnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Ejendomstype2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Koordinatsystem" type="xs:int" />
+      <xs:element minOccurs="0" name="Myndighed" nillable="true" type="tns:Metadata" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="tns:Point" />
+      <xs:element minOccurs="0" name="Postnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Side" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MinEjendomUpdate" nillable="true" type="tns:MinEjendomUpdate" />
+  <xs:complexType name="Cvr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bynavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cvrnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Kommunenavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Postnr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cvr" nillable="true" type="tns:Cvr" />
+</xs:schema>

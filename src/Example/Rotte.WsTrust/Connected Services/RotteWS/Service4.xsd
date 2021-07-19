@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Reports" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://services-rottereden.miljoeportal.dk/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" />
+  <xs:complexType name="RapportGiftForbrugUdviklingsIndsatsSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Kommune" type="ser:guid" />
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportGiftForbrugUdviklingsIndsatsSearchCriteria" nillable="true" type="tns:RapportGiftForbrugUdviklingsIndsatsSearchCriteria" />
+  <xs:complexType name="ArrayOfRapportGiftForbrugUdviklingsIndsats">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RapportGiftForbrugUdviklingsIndsats" nillable="true" type="tns:RapportGiftForbrugUdviklingsIndsats" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRapportGiftForbrugUdviklingsIndsats" nillable="true" type="tns:ArrayOfRapportGiftForbrugUdviklingsIndsats" />
+  <xs:complexType name="RapportGiftForbrugUdviklingsIndsats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Myndighed" nillable="true" type="q1:Metadata" />
+      <xs:element minOccurs="0" name="ResultatRotteanmeldelser" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultatRotteanmeldelserR1" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultatRotteanmeldelserR2" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultatStyrke0Kommunal" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke0KommunalNetto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke0R1Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke0R2" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke0R2Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke0Sikringsordning" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke1Kommunal" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke1KommunalNetto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke1R1Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke1R2" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke1R2Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke1Sikringsordning" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke2Kommunal" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke2KommunalNetto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke2R1Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke2Sikringsordning" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke3Kommunal" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke3KommunalNetto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke3R1Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke3R2" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke3R2Netto" type="xs:double" />
+      <xs:element minOccurs="0" name="ResultatStyrke3Sikringsordning" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportGiftForbrugUdviklingsIndsats" nillable="true" type="tns:RapportGiftForbrugUdviklingsIndsats" />
+  <xs:complexType name="RapportRotteOmkosningerSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Kommune" type="ser:guid" />
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportRotteOmkosningerSearchCriteria" nillable="true" type="tns:RapportRotteOmkosningerSearchCriteria" />
+  <xs:complexType name="ArrayOfRapportRotteOmkosninger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RapportRotteOmkosninger" nillable="true" type="tns:RapportRotteOmkosninger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRapportRotteOmkosninger" nillable="true" type="tns:ArrayOfRapportRotteOmkosninger" />
+  <xs:complexType name="RapportRotteOmkosninger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Myndighed" nillable="true" type="q2:Metadata" />
+      <xs:element minOccurs="0" name="ResultatFirmakontraktSum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResultatIndbyggertal" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultatIndkoebSum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResultatKommunalBekaempelseSum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResultatLoenudgifterSum" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResultatRotteanmeldelser" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportRotteOmkosninger" nillable="true" type="tns:RapportRotteOmkosninger" />
+  <xs:complexType name="RapportRotteanmeldelsesPaabudstypeSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Kommune" type="ser:guid" />
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportRotteanmeldelsesPaabudstypeSearchCriteria" nillable="true" type="tns:RapportRotteanmeldelsesPaabudstypeSearchCriteria" />
+  <xs:complexType name="ArrayOfRapportRotteanmeldelsesPaabudstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RapportRotteanmeldelsesPaabudstype" nillable="true" type="tns:RapportRotteanmeldelsesPaabudstype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRapportRotteanmeldelsesPaabudstype" nillable="true" type="tns:ArrayOfRapportRotteanmeldelsesPaabudstype" />
+  <xs:complexType name="RapportRotteanmeldelsesPaabudstype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Myndighed" nillable="true" type="q3:Metadata" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Paabudstype" nillable="true" type="q4:Metadata" />
+      <xs:element minOccurs="0" name="Resultat" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportRotteanmeldelsesPaabudstype" nillable="true" type="tns:RapportRotteanmeldelsesPaabudstype" />
+  <xs:complexType name="RapportIngenRoegProeveAarsagSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Kommune" type="ser:guid" />
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportIngenRoegProeveAarsagSearchCriteria" nillable="true" type="tns:RapportIngenRoegProeveAarsagSearchCriteria" />
+  <xs:complexType name="ArrayOfRapportIngenRoegProeveAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RapportIngenRoegProeveAarsag" nillable="true" type="tns:RapportIngenRoegProeveAarsag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRapportIngenRoegProeveAarsag" nillable="true" type="tns:ArrayOfRapportIngenRoegProeveAarsag" />
+  <xs:complexType name="RapportIngenRoegProeveAarsag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="IngenRoegProeveAarsag" nillable="true" type="q5:Metadata" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Myndighed" nillable="true" type="q6:Metadata" />
+      <xs:element minOccurs="0" name="Resultat" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportIngenRoegProeveAarsag" nillable="true" type="tns:RapportIngenRoegProeveAarsag" />
+  <xs:complexType name="RapportKommuneOmkostningerSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportKommuneOmkostningerSearchCriteria" nillable="true" type="tns:RapportKommuneOmkostningerSearchCriteria" />
+  <xs:complexType name="ArrayOfRapportKommuneOmkostninger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RapportKommuneOmkostninger" nillable="true" type="tns:RapportKommuneOmkostninger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRapportKommuneOmkostninger" nillable="true" type="tns:ArrayOfRapportKommuneOmkostninger" />
+  <xs:complexType name="RapportKommuneOmkostninger">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Myndighed" nillable="true" type="q7:Metadata" />
+      <xs:element minOccurs="0" name="ResultatIndbyggertal" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultatRotteanmeldelser" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultatSumOmkostninger" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportKommuneOmkostninger" nillable="true" type="tns:RapportKommuneOmkostninger" />
+  <xs:complexType name="RapportOrienteringspligtStatusSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Kommune" type="ser:guid" />
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportOrienteringspligtStatusSearchCriteria" nillable="true" type="tns:RapportOrienteringspligtStatusSearchCriteria" />
+  <xs:complexType name="ArrayOfRapportOrienteringspligtStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RapportOrienteringspligtStatus" nillable="true" type="tns:RapportOrienteringspligtStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRapportOrienteringspligtStatus" nillable="true" type="tns:ArrayOfRapportOrienteringspligtStatus" />
+  <xs:complexType name="RapportOrienteringspligtStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aar" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts" minOccurs="0" name="Myndighed" nillable="true" type="q8:Metadata" />
+      <xs:element minOccurs="0" name="OrienteringAfBorgere" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrienteringBegrundelse" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RapportOrienteringspligtStatus" nillable="true" type="tns:RapportOrienteringspligtStatus" />
+</xs:schema>

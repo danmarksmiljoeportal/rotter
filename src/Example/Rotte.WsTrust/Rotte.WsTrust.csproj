@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58B3BD65-5C98-4CC6-8300-817F6E120316}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rotte.WsTrust</RootNamespace>
+    <AssemblyName>Rotte.WsTrust</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CertificateWSTrustBinding.cs" />
+    <Compile Include="CertUtil.cs" />
+    <Compile Include="Connected Services\RotteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RotteredenConfigurationSectionHandler.cs" />
+    <Compile Include="TokenTypes.cs" />
+    <Compile Include="WsService.cs" />
+    <Compile Include="WSTrustBinding.cs" />
+    <Compile Include="WsTrustClient2013.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Aarsag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.AarsagType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.AllMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ApiCredential.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.BekaempelsesfirmaPaabudstype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.BekaempelsesfirmaPaabudView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.BekaempelsesfirmaView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Bekaempelsestype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.BFGiftView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Bruger.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.BrugerView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.CheckEjendomValidityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.CheckIndberetningIsDoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Claim.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ContactInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ContentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.CreateParentRotteanmeldelseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Cvr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Document.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.DuplicateRotteanmeldlseView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Dyr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Ejendom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Ejendomstype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetByResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetContactInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetCurrentUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetDocumentInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetDocumentsByRotteanmeldelseIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetPagedMineEjendomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetPagedRotteanmeldelseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportGiftForbrugUdviklingsIndsatsNettoYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportGiftForbrugUdviklingsIndsatsYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportIngenRoegProeveAarsagYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportKommuneOmkostningerYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportOrienteringspligtStatusYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportRotteanmeldelsesPaabudstypeYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetRapportRotteOmkosningerYearsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetReceivedNotificationsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.GetSikringsordningerSearchItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Gift.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Gifttype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.IndberetningView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.IndbyggertalView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.IngenBekaempelseAarsag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.IngenRoegProeveAarsag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.IsMunicipalityLockedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.LookupCvrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.MineEjendomPageSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.MinEjendom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Myndighed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Paabudstype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.PushNotification.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.PutDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.QueryResponseOfNotificationViewH3A2rP8r.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RapportGiftForbrugUdviklingsIndsats.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RapportIngenRoegProeveAarsag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RapportKommuneOmkostninger.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RapportOrienteringspligtStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RapportRotteanmeldelsesPaabudstype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RapportRotteOmkosninger.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadAarsagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadAarsagTyperResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadBekaempelsesfirmaPaabudstyperResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadBekaempelsestyperResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadBrugerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadDyrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadEjendomstyperResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadGiftResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadGifttyperResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadIndbyggertalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadIngenBekaempelseAarsagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadIngenRoegProeveAarsagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadMyndighederResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadMySikringsordningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadPaabudstyperResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadRotterObserveretResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ReadTilsynsresultaterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RotteanmeldelsePageSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RotteanmeldelseTypeAheadItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RotteanmeldelseView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.RotterObserveret.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchApiCredentialsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchBekaempelsesfirmaNavnOrCvrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchBekaempelsesfirmaPaabudResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchBekaempelsesfirmaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchBFGiftResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchEjendomInAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchEjendomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchIndberetningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchMinEjendomInAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchMinEjendomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchMySikringsordningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRapportGiftForbrugUdviklingsIndsatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRapportIngenRoegProeveAarsagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRapportKommuneOmkostningerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRapportOrienteringspligtStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRapportRotteanmeldelsesPaabudstypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRapportRotteOmkosningerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRotteanmeldelseItemViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchRotteanmeldelseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchSikringsordningerItemViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchSikringsordningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchTilsynResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SearchUniqueBekaempereResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.ServiceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SikringsordningerSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SikringsordningerTypeAheadItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.SikringsordningView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.TilsynRoot.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.Tilsynsresultat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateAdminInfoModtagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateApiCredentialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateBekaempelsesfirmaPaabudResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateBekaempelsesfirmaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateBFGiftResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateEjendomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateIndberetningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateMinEjendomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateMySikringsordningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateRotteanmeldelseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateSikringsordningResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Rotte.WsTrust.RotteWS.UpdateTilsynResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RotteWS\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RotteWS\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RotteWS\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RotteWS\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RotteWS\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RotteWS\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RotteWS\ServiceImpl.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RotteWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RotteWS\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RotteWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RotteWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RotteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

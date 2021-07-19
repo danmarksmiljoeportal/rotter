@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Notifications" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Miljoeportal.Rottereden.Contracts.Notifications" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="MessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewRotteanmeldelse" />
+      <xs:enumeration value="ClosedRotteanmeldelse" />
+      <xs:enumeration value="RotteanmeldelseNotCompletedIn35Days" />
+      <xs:enumeration value="RotteanmeldelseNotCompletedIn35DayMunicipality" />
+      <xs:enumeration value="RotteanmeldelseNotCompletedIn50Days" />
+      <xs:enumeration value="RotteanmeldelseNotCompletedIn50DayMunicipality" />
+      <xs:enumeration value="NotStartStyrke0" />
+      <xs:enumeration value="GiftTypeChange" />
+      <xs:enumeration value="GiftUsageBeyondMinMax" />
+      <xs:enumeration value="ParentRAActionToKommune" />
+      <xs:enumeration value="ParentRAActionToR1" />
+      <xs:enumeration value="RAAarsag" />
+      <xs:enumeration value="RAOpfoelgning" />
+      <xs:enumeration value="NoRotteanmeldelse14Days" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageType" nillable="true" type="tns:MessageType" />
+</xs:schema>
