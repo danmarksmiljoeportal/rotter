@@ -1,21 +1,10 @@
 ﻿using Newtonsoft.Json;
 using Rotte.WsTrust;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WsFed.WpfApp
 {
@@ -67,7 +56,7 @@ namespace WsFed.WpfApp
         private void btnLoginWithUsernamePassword_Click(object sender, RoutedEventArgs e)
         {
             txtLogs.Text = string.Empty;
-            txtLogs.AppendText("Login with Username/Password: ");
+            txtLogs.AppendText("Login with DMP (Identify) User: ");
             txtLogs.AppendText(Environment.NewLine);
             try
             {
@@ -80,7 +69,7 @@ namespace WsFed.WpfApp
 
                 var claims = rotteWS.GetActAsClaims();
 
-                txtLogs.AppendText("GetActAsClaims response: ");
+                txtLogs.AppendText("RotteWS.GetActAsClaims response: ");
                 txtLogs.AppendText(Environment.NewLine);
                 txtLogs.AppendText(JsonConvert.SerializeObject(claims, Formatting.Indented));
             }
@@ -104,17 +93,19 @@ namespace WsFed.WpfApp
                 var timeout = TimeSpan.FromMinutes(5);
 
                 var localWindowsToken = WsFactory.GetLocalWindowsToken(
-                    txtWindowsEndpoint.Text, txtIdentity.Text);
+                    txtWindowsEndpoint.Text, 
+                    txtIdentity.Text);
 
                 var securityToken = WsFactory.ExchangeLocalWindowsTokenToIdentifyToken(
-                    txtWindowsEndpoint.Text, txtIdentity.Text,
+                    txtWindowsEndpoint.Text, 
+                    txtIdentity.Text,
                     localWindowsToken);
 
                 var rotteWS = WsFactory.GetRotteWS(securityToken, timeout);
 
                 var claims = rotteWS.GetActAsClaims();
 
-                txtLogs.AppendText("GetActAsClaims response: ");
+                txtLogs.AppendText("RotteWS.GetActAsClaims response: ");
                 txtLogs.AppendText(Environment.NewLine);
                 txtLogs.AppendText(JsonConvert.SerializeObject(claims, Formatting.Indented));
             }

@@ -60,6 +60,8 @@ Contains the information of RotteWS configuration and Identify configuration
 - Identify/EncryptionCertificate is based64 content of `/certificates/Identify/log-in.miljoeportal.dk.cer` file
 ![image.png](/assets/images/04.png)
 
+- Identify endpoints: RemoteEndpoint, IssuedTokenEndpoint, UserNameEndpoint, CertificateEndpoint
+
 3. system.identityModel and system.identityModel.services elements
 ![image.png](/assets/images/07.png)
 
@@ -74,7 +76,7 @@ Must enable TLS 1.2 before contacting the service:
 `ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12`
 
 #### 1.6. Contact RotteWS from C# code 
-`Rotte.WsTrust` library project is located `\src\Exmample\Rotte.WsTrust` consists of WsFed authentication and Rotte service contracts code, download it and add to your project as libarary
+`Rotte.WsTrust` library project is located `\src\Exmample\Rotte.WsTrust` consists of WsFed authentication and Rotte service contracts code, download it and add to your web app project as libarary
 `Rotte.WsTrust` already add RotteWS service reference by Visual Studio
 ![image.png](/assets/images/09.png)
 
@@ -83,4 +85,60 @@ In below code, `Page_Load` event method shows how get RotteWS service instance f
 ![image.png](/assets/images/10.png)
 
 ## 2. How to integrate with a desktop app
+As Web app, WsFed (SOAP) on Desktop app only supports .NET Framework (recommended 4.5 or later), doesn't work with other Framework: NET Core ... or languages: java and PHP ...
+
+Following steps:
+- Setup application configuration
+- Login with DMP (Identify) user
+
+#### 2.1. Setup application configuration
+Looking at App.config as example for configuration, located at `/src/Example/WsFed.WpfApp`
+
+The configuration must have elements:
+
+1. configSections element 
+Declare configuration element included in App.config:  RotteredenService
+
+2. RotteredenService element
+Contains the information of RotteWS configuration and Identify configuration
+![image.png](/assets/images/11.png)
+
+- RotteWS/ServiceUrl is RotteWS url
+\+ Prod: https://services-rottereden.miljoeportal.dk/Service.svc
+\+ Demo: https://services-rottereden.demo.miljoeportal.dk/Service.svc
+
+- RotteWS/EncryptionCertificate is based64 content of `/certificates/Encryption/services.rottereden.miljoeportal.dk.cer` file 
+
+- Identify/EncryptionCertificate is based64 content of `/certificates/Identify/log-in.miljoeportal.dk.cer` file
+
+- Identify endpoints: RemoteEndpoint, IssuedTokenEndpoint, UserNameEndpoint, CertificateEndpoint
+
+3. appSettings element
+- `PartnerUrl` is url of Partnerorganisationer as example from NatureService, each element is ADFS windows information of each partner: Display name, windows endpoint and identity endpoint
+![image.png](/assets/images/12.png)
+
+
+Must enable TLS 1.2 before contacting the service: `ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12` 
+And example is for loading Partnerorganisationer from `PartnerUrl` as below code
+![image.png](/assets/images/13.png)
+
+`Rotte.WsTrust` library project is located `\src\Exmample\Rotte.WsTrust` consists of WsFed authentication and Rotte service contracts code, download it and add to your desktop application project as libarary
+`Rotte.WsTrust` already add RotteWS service reference by Visual Studio
+
+#### 2.2. Login with DMP (Identify) user
+Using the username and password is provided by DMP Identify system to request the token for RotteWS
+![image.png](/assets/images/14.png)
+
+
+#### 2.3. Login with Windows Auth (ADFS)
+Using Windows domain account of user to get local windows token and coordinate with Identify to issue/exchange the token which access RotteWS. This is overview flow
+![image.png](/assets/images/ADFS_Windows_Auth.png)
+
+Here is the checklist (from Nature) to ensure that your ADFS login will work: https://naturappl.blob.core.windows.net/version3/NatureLoginGuideline.pdf
+
+Finally, the code is as follows:
+![image.png](/assets/images/15.png)
+
+In example app, selecting Partnerorganisationer to get windows endpoint and identity endpoint to get local windows token `WsFactory.GetLocalWindowsToken` before exchaning Identify token `WsFactory.ExchangeLocalWindowsTokenToIdentifyToken`. Then we create RotteWS from Identify token
+
 

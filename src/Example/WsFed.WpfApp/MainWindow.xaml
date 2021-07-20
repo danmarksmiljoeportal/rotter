@@ -21,9 +21,9 @@
                       Header="DMP (Identify) User">
                 <StackPanel>
                     <Label Content="Username" />
-                    <TextBox Name="txtUsername" Padding="5" Text="657tbumir" />
+                    <TextBox Name="txtUsername" Padding="5" Text="" />
                     <Label Content="Password" />
-                    <PasswordBox Name="txtPassword" Padding="5" Password="3F8PS0Kg6" />
+                    <PasswordBox Name="txtPassword" Padding="5" Password="" />
                 </StackPanel>
             </GroupBox>
             <GroupBox Grid.Row="0" Grid.Column="1" Margin="5" Padding="5"
@@ -41,11 +41,11 @@
             </GroupBox>
 
             <Button Grid.Row="1" Grid.Column="0" Width="200" Padding="5"
-                    Name="btnLoginUP" Content="Login with Username/Password"
+                    Name="btnLoginUP" Content="Login with DMP (Identify) User"
                     Click="btnLoginWithUsernamePassword_Click">
             </Button>
             <Button Grid.Row="1" Grid.Column="2" Width="200" Padding="5" 
-                    Name="btnLoginPO" Content="Login with Windows Authentication"
+                    Name="btnLoginPO" Content="Login with Windows Auth (ADFS)"
                     Click="btnLoginWithWindowsAuth_Click">
             </Button>
         </Grid>
