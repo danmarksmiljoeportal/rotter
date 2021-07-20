@@ -1,0 +1,58 @@
+﻿<Window x:Class="WsFed.WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WsFed Desktop Example" WindowStartupLocation="CenterScreen"
+        Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Row="0" Grid.Column="0" Margin="5" Padding="5"
+                      Header="DMP (Identify) User">
+                <StackPanel>
+                    <Label Content="Username" />
+                    <TextBox Name="txtUsername" Padding="5" Text="657tbumir" />
+                    <Label Content="Password" />
+                    <PasswordBox Name="txtPassword" Padding="5" Password="3F8PS0Kg6" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Row="0" Grid.Column="1" Margin="5" Padding="5"
+                      Header="Partnerorganisationer - Windows Auth (ADFS)">
+                <StackPanel>
+                    <Label Content="Select Partner" />
+                    <ComboBox Padding="5" Name="cbPartners" 
+                              DisplayMemberPath="DisplayName"
+                              SelectionChanged="cbPartners_SelectionChanged" IsEditable="True" />
+                    <Label Content="Windows Endpoint" />
+                    <TextBox Name="txtWindowsEndpoint" IsEnabled="False" Padding="5" />
+                    <Label Content="Identity" />
+                    <TextBox Name="txtIdentity" IsEnabled="False" Padding="5" />
+                </StackPanel>
+            </GroupBox>
+
+            <Button Grid.Row="1" Grid.Column="0" Width="200" Padding="5"
+                    Name="btnLoginUP" Content="Login with Username/Password"
+                    Click="btnLoginWithUsernamePassword_Click">
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" Width="200" Padding="5" 
+                    Name="btnLoginPO" Content="Login with Windows Authentication"
+                    Click="btnLoginWithWindowsAuth_Click">
+            </Button>
+        </Grid>
+        <StackPanel Grid.Row="1" Margin="5">
+            <Label Content="Logs: " Name="lblLogs" />
+            <TextBox Height="200" MinLines="10" IsReadOnly="True" Name="txtLogs"
+                     AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -18,7 +18,7 @@ namespace WsFed.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             var timeout = TimeSpan.FromMinutes(5);
-            var securityToken = WsFactory.GetActAsSecurityToken();
+            var securityToken = WsFactory.GetIdentifyActAsToken();
             var rotteWS = WsFactory.GetRotteWS(securityToken, timeout);
 
             var claims = rotteWS.GetActAsClaims();

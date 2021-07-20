@@ -15,10 +15,6 @@ namespace Rotte.WsTrust
     {
         private static readonly RotteredenServiceConfiguration Config = RotteredenServiceConfiguration.Get();
 
-        public static SecurityToken GetActAsSecurityToken()
-        {
-            return GetSecurityToken(Config.RotteWSEndpoint);
-        }
 
         public static IService GetRotteWS(SecurityToken securityToken, TimeSpan commontimeout)
         {
@@ -68,32 +64,74 @@ namespace Rotte.WsTrust
             return channelFactory.CreateChannelWithIssuedToken(securityToken);
         }
 
-        private static SecurityToken GetSecurityToken(EndpointAddress endpointAddress)
+        public static SecurityToken GetIdentifyActAsToken()
         {
-            // Tag logon principal
             var identity = Thread.CurrentPrincipal.Identity as ClaimsIdentity;
-            if (identity == null) throw new ApplicationException("ClaimsPrincipal must exist");
-            // Hiv fat i token'et
+            if (identity == null)
+            {
+                throw new ApplicationException("User didn't login yet");
+            }
+
             var bc = identity.BootstrapContext as BootstrapContext;
             if (bc == null)
+            {
                 throw new ApplicationException("Cannot get boostrap context from current identity.");
-            var newToken = WsTrustClient2013.RequestSecurityTokenWithX509(
+            }
+
+            return WsTrustClient2013.RequestSecurityTokenWithX509(
                 Config.IdentifyCertificateEndpoint,
                 Config.IdentifyEncryptionCertificate,
-                endpointAddress,
+                Config.RotteWSEndpoint,
                 Config.ActAsCertificate,
                 EnsureBootstrapSecurityToken(bc));
-            return newToken;
         }
 
         private static SecurityToken EnsureBootstrapSecurityToken(BootstrapContext bootstrapContext)
         {
             if (bootstrapContext.SecurityToken != null)
+            {
                 return bootstrapContext.SecurityToken;
+            }
             if (string.IsNullOrWhiteSpace(bootstrapContext.Token))
+            {
                 return null;
+            }
             var handlers = FederatedAuthentication.FederationConfiguration.IdentityConfiguration.SecurityTokenHandlers;
             return handlers.ReadToken(new XmlTextReader(new StringReader(bootstrapContext.Token)));
+        }
+
+        public static SecurityToken GetIdentifyUserToken(string username, string password)
+        {
+            return WsTrustClient2013.RequestSecurityTokenWithUsername(
+                Config.IdentifyUserNameEndpoint,
+                Config.IdentifyEncryptionCertificate,
+                Config.RotteWSEndpoint,
+                username, password);
+        }
+
+        public static SecurityToken GetLocalWindowsToken(string windowsEndpoint, string identity)
+        {
+            var localStsAddress = new EndpointAddress(new Uri(windowsEndpoint), 
+                EndpointIdentity.CreateDnsIdentity(identity));
+
+            // Get local security token using Windows Authentication, 
+            // since we are logged on the domain via the local IdP
+            return WsTrustClient2013.RequestSecurityTokenWithWindowsAuth(
+                localStsAddress, Config.IdentifyRemoteEndpoint);
+        }
+
+        public static SecurityToken ExchangeLocalWindowsTokenToIdentifyToken(
+            string windowsEndpoint, string identity, SecurityToken localToken)
+        {
+            var localStsAddress = new EndpointAddress(new Uri(windowsEndpoint), 
+                EndpointIdentity.CreateDnsIdentity(identity));
+
+            return WsTrustClient2013.RequestSecurityTokenWithWindowsAuthToken(
+                Config.IdentifyIssuedTokenEndpoint,
+                Config.IdentifyEncryptionCertificate,
+                Config.RotteWSEndpoint,
+                localStsAddress,
+                localToken);
         }
     }
 }

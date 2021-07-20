@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsFed.Web", "WsFed.Web\WsFe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotte.WsTrust", "Rotte.WsTrust\Rotte.WsTrust.csproj", "{58B3BD65-5C98-4CC6-8300-817F6E120316}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsFed.WpfApp", "WsFed.WpfApp\WsFed.WpfApp.csproj", "{1DE0723C-CA3D-4364-A899-A10E87C02DDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{58B3BD65-5C98-4CC6-8300-817F6E120316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58B3BD65-5C98-4CC6-8300-817F6E120316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58B3BD65-5C98-4CC6-8300-817F6E120316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE0723C-CA3D-4364-A899-A10E87C02DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE0723C-CA3D-4364-A899-A10E87C02DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE0723C-CA3D-4364-A899-A10E87C02DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE0723C-CA3D-4364-A899-A10E87C02DDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

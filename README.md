@@ -70,6 +70,8 @@ Contains the information of RotteWS configuration and Identify configuration
 Just follow exact code as below
 ![image.png](/assets/images/08.png)
 
+Must enable TLS 1.2 before contacting the service: 
+`ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12`
 
 #### 1.6. Contact RotteWS from C# code 
 `Rotte.WsTrust` library project is located `\src\Exmample\Rotte.WsTrust` consists of WsFed authentication and Rotte service contracts code, download it and add to your project as libarary

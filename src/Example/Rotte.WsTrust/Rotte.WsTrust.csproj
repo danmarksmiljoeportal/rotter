@@ -58,6 +58,7 @@
     <Compile Include="RotteredenConfigurationSectionHandler.cs" />
     <Compile Include="TokenTypes.cs" />
     <Compile Include="UserNameWSTrustBinding.cs" />
+    <Compile Include="WindowsWSTrustBinding.cs" />
     <Compile Include="WsFactory.cs" />
     <Compile Include="WSTrustBinding.cs" />
     <Compile Include="WsTrustClient2013.cs" />

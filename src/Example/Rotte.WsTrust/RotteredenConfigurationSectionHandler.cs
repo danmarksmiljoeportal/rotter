@@ -46,6 +46,16 @@ namespace Rotte.WsTrust
         public X509Certificate2 RotteWSEncryptionCertificate { get; private set; }
 
         /// <summary>
+        /// Endpoint adresse til Identify remote auth endpoint
+        /// </summary>
+        public EndpointAddress IdentifyRemoteEndpoint { get; private set; }
+
+        /// <summary>
+        /// Endpoint adresse til Identify issued token 256 auth endpoint
+        /// </summary>
+        public EndpointAddress IdentifyIssuedTokenEndpoint { get; private set; }
+
+        /// <summary>
         /// Endpoint adresse til Identify user name auth endpoint
         /// </summary>
         public EndpointAddress IdentifyUserNameEndpoint { get; private set; }
@@ -90,8 +100,14 @@ namespace Rotte.WsTrust
                 GetChildElementInnerText(rotteredenlement, "EndpointIdentity", true));
             RotteWSEncryptionCertificate = GetChildElementInnerTextAsX509Certificate(rotteredenlement, "EncryptionCertificate", true);
 
-            // AD FS 2.0 
+            // Identify 
             var adfs2Element = GetChildElementFromName(section, "Identify", true);
+            IdentifyRemoteEndpoint = CreateEndpointAddress(
+               GetChildElementInnerTextAsUri(adfs2Element, "RemoteEndpoint", true),
+               GetChildElementInnerText(adfs2Element, "EndpointIdentity", true));
+            IdentifyIssuedTokenEndpoint = CreateEndpointAddress(
+               GetChildElementInnerTextAsUri(adfs2Element, "IssuedTokenEndpoint", true),
+               GetChildElementInnerText(adfs2Element, "EndpointIdentity", true));
             IdentifyUserNameEndpoint = CreateEndpointAddress(
                 GetChildElementInnerTextAsUri(adfs2Element, "UserNameEndpoint", true),
                 GetChildElementInnerText(adfs2Element, "EndpointIdentity", true));
