@@ -21,6 +21,7 @@ Following steps:
 - Open command prompt with administrator privileges
 - Navigate to cmd folder to the folder that contains request.inf file
 -  Run `certreq -new request.inf mydomain.com.cer`
+![image.png](/assets/images/00.png)
 - Open Microsoft Management Console and Certificate Store
 ![image.png](/assets/images/01.png)
 - Export `mydomain.com.pfx` with private key
@@ -32,8 +33,10 @@ Sending new domain and `mydomain.com.pfx` file to DMP to create the Identify con
 #### 1.4. Install the certificates to Certificate Store on Server
 RotteWS Encryption, Identify Encryption and ActAs certificate are located at ` /certificates` folder and contact DMP to get the password of `Rottereden_ActAs_prod.pfx` and `Rottereden_ActAs_test.pfx`
 
-- Install `mydomain.com.pfx`, `Rottereden_ActAs_prod.pfx` and `Rottereden_ActAs_test.pfx` to Personal (My) store, then grant the access for the both certificates to IIS_IUSRS user
+- Install `mydomain.com.pfx`, `Rottereden_ActAs_prod.pfx` and `Rottereden_ActAs_test.pfx` to Personal (My) store
 ![image.png](/assets/images/05.png)
+
+- Grant the access for the both certificates to IIS_IUSRS user. Right click the certificate => All Tasks -> Manage Private Keys -> Add IIS_IUSRS user
 
 - Install `log-in.miljoeportal.dk.cer` to Trust People store
 ![image.png](/assets/images/06.png)
