@@ -5,7 +5,7 @@ Following step by step to setup WsFed for ASP.NET .NET Framework:
 - Create or buy new domain, eg mydomain.com
 - Create the encryption certificate with CN: mydomain.com
 - Use the domain and encryption certificate to create Identify connection
-- Install the certificates to Certificate Store on Server/Local PC 
+- Install the certificates to Certificate Store on Windows Server
 - Update website configuration
 - Contact RotteWS from C# code 
 
@@ -88,11 +88,12 @@ In below code, `Page_Load` event method shows how get RotteWS service instance f
 ![image.png](/assets/images/10.png)
 
 ## 2. How to integrate with a desktop app
-As Web app, WsFed (SOAP) on Desktop app only supports .NET Framework (recommended 4.5 or later), doesn't work with other Framework: NET Core ... or languages: java and PHP ...
+As Web app, WsFed (SOAP) on Desktop app (WPF, Winform) only supports .NET Framework (recommended 4.5 or later), doesn't work with other Framework: NET Core ... or languages: java and PHP ...
 
-Following steps:
+Following step by step to setup WsFed for desktop app:
 - Setup application configuration
 - Login with DMP (Identify) user
+- Login with Windows Auth (ADFS)
 
 #### 2.1. Setup application configuration
 Looking at App.config as example for configuration, located at `/src/Example/WsFed.WpfApp`
