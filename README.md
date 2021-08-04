@@ -72,6 +72,7 @@ Contains the information of RotteWS configuration and Identify configuration
 - Update `Thumprint of mydomain.com certificate` which already install to People (My) store above step
 
 4. Update Application_Start event in Global.asax
+
 Just follow exact code as below
 ![image.png](/assets/images/08.png)
 
