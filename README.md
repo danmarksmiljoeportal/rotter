@@ -81,6 +81,7 @@ Must enable TLS 1.2 before contacting the service:
 
 #### 1.6. Contact RotteWS from C# code 
 `Rotte.WsTrust` library project is located `\src\Exmample\Rotte.WsTrust` consists of WsFed authentication and Rotte service contracts code, download it and add to your web app project as libarary
+
 `Rotte.WsTrust` already add RotteWS service reference by Visual Studio
 ![image.png](/assets/images/09.png)
 
@@ -124,6 +125,7 @@ Contains the information of RotteWS configuration and Identify configuration
 
 
 Must enable TLS 1.2 before contacting the service: `ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12` 
+
 And example is for loading Partnerorganisationer from `PartnerUrl` as below code
 ![image.png](/assets/images/13.png)
 
