@@ -240,7 +240,7 @@ namespace Rotte.WsTrust
             SecurityToken windowsAuthToken)
         {
             // What binding should I use here for the issuer binding?
-            var stsBinding = CreateWindowsAuthTokenBinding(localStsAddress);
+            var stsBinding = CreateCertificateBinding(localStsAddress);
 
             // Lav channel factory
             var channelFactory = new WSTrustChannelFactory(
@@ -276,7 +276,7 @@ namespace Rotte.WsTrust
             }
         }
 
-        private static CustomBinding CreateWindowsAuthTokenBinding(EndpointAddress localStsAddress)
+        private static CustomBinding CreateCertificateBinding(EndpointAddress localStsAddress)
         {
             // Opret security binding element
             var securityElement = SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(
