@@ -1,5 +1,5 @@
 # Logging in to the Rotter service
-The following page helps understand what is needed to ensure that your application can access the Rottedatabase web service with a user in context. A specific identifiable user must always be in context as this user must be granted a token by DMP's Identity Provider (henceforth "Identify") so that Rottedatabasen is aware of who the user is and can react and log data according to this context. DMP will no longer accept the user of user certificates (i.e. system to system login). 
+The following page helps understand what is needed to ensure that your application can access the Rottedatabase web service with a user in context. A specific identifiable user must always be in context as this user must be granted a token by DMP's Identity Provider (henceforth "Identify") so that Rottedatabasen is aware of who the user is and can react and log data according to this context. DMP will no longer accept the use of user certificates (i.e. system to system login). 
 
 As there are big differences in regards to integrating a web application and a desktop application with the Rotter WCF service, we have split this artickle up into two parts that explain each of these in turn.
 
